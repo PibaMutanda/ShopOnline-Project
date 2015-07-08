@@ -9,7 +9,7 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQueries({
-		@NamedQuery(name = "Article.findByCateg", query = "select a from Article a where a.categ=:categ"),
+		@NamedQuery(name = "Article.findByCateg", query = "select a from Article a where a.categ.id=:categ"),
 		@NamedQuery(name = "Article.findAll", query = "select a from Article a") })
 public class Article {
 

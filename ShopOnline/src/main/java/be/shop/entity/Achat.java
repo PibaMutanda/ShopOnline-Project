@@ -14,7 +14,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @NamedQueries({
-		@NamedQuery(name = "Achat.findByDate", query = "select a from Achat where a.dateAchat=:date"),
+		@NamedQuery(name = "Achat.findByDate", query = "select ac from Achat ac where ac.dateAchat=:date"),
 		@NamedQuery(name = "Achat.findAll", query = "select a from Achat a"),
 		@NamedQuery(name = "Achat.findByClient", query = "select a from Achat a where a.client=:client") })
 public class Achat {

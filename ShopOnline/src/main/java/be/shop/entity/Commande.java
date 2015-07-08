@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 @NamedQueries({
 		@NamedQuery(name = "Commande.findAll", query = "select c from Commande c"),
 		@NamedQuery(name = "Commande.findByArticle", query = "select c from Commande c join c.articles a where a.id=:id"),
-		@NamedQuery(name = "Commande.findByAchat", query = " select c from Commande c where c.achat=:achat") })
+		@NamedQuery(name = "Commande.findByAchat", query = "select c from Commande c where c.achat.id=:achat") })
 public class Commande {
 
 	@Id

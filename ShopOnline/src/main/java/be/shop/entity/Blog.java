@@ -14,7 +14,7 @@ import javax.persistence.TemporalType;
 @NamedQueries({
 		@NamedQuery(name = "Blog.findAll", query = "select b from Blog b"),
 		@NamedQuery(name = "Blog.findByTitre", query = "select b from Blog b where b.titre=:titre"),
-		@NamedQuery(name = "Blog.findByTexte", query = "select b from Blog b where b.texte like %texte%") })
+		 })
 public class Blog {
 
 	@Id

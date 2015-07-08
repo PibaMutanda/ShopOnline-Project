@@ -15,7 +15,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @NamedQueries({
-		@NamedQuery(name = "Client.findByEmail", query = "select c from Client c where c.email:=email"),
+		@NamedQuery(name = "Client.findByEmail", query = "select cl from Client cl where cl.email=:email"),
 		@NamedQuery(name = "Client.findAll", query = "select c from Client c"),
 		@NamedQuery(name = "Client.findByDateInscr", query = "select c from Client c where c.dateInscription=:dateInscr") })
 public class Client {
