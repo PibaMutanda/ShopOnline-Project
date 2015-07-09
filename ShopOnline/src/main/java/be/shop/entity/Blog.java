@@ -13,8 +13,7 @@ import javax.persistence.TemporalType;
 @Entity
 @NamedQueries({
 		@NamedQuery(name = "Blog.findAll", query = "select b from Blog b"),
-		@NamedQuery(name = "Blog.findByTitre", query = "select b from Blog b where b.titre=:titre"),
-		 })
+		@NamedQuery(name = "Blog.findByTitre", query = "select b from Blog b where b.titre like '%titre%'"), })
 public class Blog {
 
 	@Id

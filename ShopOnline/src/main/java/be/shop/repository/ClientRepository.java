@@ -3,6 +3,8 @@
  */
 package be.shop.repository;
 
+import java.util.Date;
+
 import javax.ejb.Local;
 
 import be.shop.entity.Client;
@@ -14,4 +16,7 @@ import be.shop.entity.Client;
 @Local
 public interface ClientRepository extends GenericRepository<Client> {
 
+	Client findByEmail(String email);
+
+	Client findByDateInscr(Date date);
 }
