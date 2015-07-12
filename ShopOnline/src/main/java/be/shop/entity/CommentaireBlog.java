@@ -10,10 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
+@Table(name="CommentaireBlogs")
 @NamedQuery(name = "CommentaireBlog.findByClient", query = "select cb from CommentaireBlog cb join cb.clients cl  where cl.id=:id")
 public class CommentaireBlog {
 

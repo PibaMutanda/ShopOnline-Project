@@ -9,10 +9,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
+@Table(name="Achats")
 @NamedQueries({
 		@NamedQuery(name = "Achat.findByDate", query = "select ac from Achat ac where ac.dateAchat=:date"),
 		@NamedQuery(name = "Achat.findAll", query = "select a from Achat a"),

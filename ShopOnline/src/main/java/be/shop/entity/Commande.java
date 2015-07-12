@@ -10,8 +10,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="Commandes")
 @NamedQueries({
 		@NamedQuery(name = "Commande.findAll", query = "select c from Commande c"),
 		@NamedQuery(name = "Commande.findByArticle", query = "select c from Commande c join c.articles a where a.id=:id"),
@@ -21,7 +23,7 @@ public class Commande {
 	@Id
 	@GeneratedValue
 	private Long id;
-	@JoinColumn
+	@JoinColumn(name="achats")
 	private Achat achat;
 	@OneToMany
 	private List<Article> articles = new ArrayList<Article>();

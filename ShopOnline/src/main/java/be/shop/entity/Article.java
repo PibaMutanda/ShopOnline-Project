@@ -6,8 +6,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="Articles")
 @NamedQueries({
 		@NamedQuery(name = "Article.findByCateg", query = "select a from Article a where a.categ.id=:categ"),
 		@NamedQuery(name = "Article.findAll", query = "select a from Article a") })

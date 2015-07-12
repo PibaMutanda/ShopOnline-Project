@@ -10,12 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-import javax.validation.constraints.Pattern;
 
 @Entity
+@Table(name="Clients")
 @NamedQueries({
 		@NamedQuery(name = "Client.findByEmail", query = "select cl from Client cl where cl.email=:email"),
 		@NamedQuery(name = "Client.findAll", query = "select c from Client c"),
@@ -33,10 +34,10 @@ public class Client {
 
 	@Transient
 	private String passwordConf;
-	@Pattern(message = "Invalide adresse mail", regexp = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$")
+	
 	private String email;
 	private String rue;
-	@Pattern(regexp = "^[0-9]{4}$", message = "Code Postal non valide")
+
 	private String cp;
 	private String localite;
 

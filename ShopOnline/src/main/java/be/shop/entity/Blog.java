@@ -7,10 +7,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
+@Table(name="Blogs")
 @NamedQueries({
 		@NamedQuery(name = "Blog.findAll", query = "select b from Blog b"),
 		@NamedQuery(name = "Blog.findByTitre", query = "select b from Blog b where b.titre like '%titre%'"), })

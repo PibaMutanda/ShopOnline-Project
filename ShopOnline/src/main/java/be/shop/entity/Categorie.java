@@ -4,8 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="Categories")
 @NamedQuery(name = "Categorie.findAll", query = "select c from Categorie c")
 public class Categorie {
 
