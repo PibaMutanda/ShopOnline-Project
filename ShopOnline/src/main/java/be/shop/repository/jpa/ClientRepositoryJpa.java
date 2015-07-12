@@ -39,4 +39,17 @@ public class ClientRepositoryJpa extends GenericRepositoryJpa<Client> implements
 		return client;
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public Client findByEmailPassword(String email, String password) {
+		Client client = null;
+		List<Client> clients = getEntityManager()
+				.createNamedQuery("Client.findByEmailPassword")
+				.setParameter("email", email)
+				.setParameter("password", password).getResultList();
+		if (!clients.isEmpty())
+			client = clients.get(0);
+		return client;
+	}
+
 }

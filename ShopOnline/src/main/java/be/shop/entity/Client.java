@@ -12,12 +12,15 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @NamedQueries({
 		@NamedQuery(name = "Client.findByEmail", query = "select cl from Client cl where cl.email=:email"),
 		@NamedQuery(name = "Client.findAll", query = "select c from Client c"),
-		@NamedQuery(name = "Client.findByDateInscr", query = "select c from Client c where c.dateInscription=:dateInscr") })
+		@NamedQuery(name = "Client.findByDateInscr", query = "select c from Client c where c.dateInscription=:dateInscr"),
+		@NamedQuery(name = "Client.findByEmailPassword", query = "select c from Client c where c.email=:email and c.password=:password") })
 public class Client {
 
 	@Id
@@ -26,11 +29,14 @@ public class Client {
 
 	private String nom;
 	private String prenom;
-	private String login;
 	private String password;
 
+	@Transient
+	private String passwordConf;
+	@Pattern(message = "Invalide adresse mail", regexp = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$")
 	private String email;
 	private String rue;
+	@Pattern(regexp = "^[0-9]{4}$", message = "Code Postal non valide")
 	private String cp;
 	private String localite;
 
@@ -57,14 +63,6 @@ public class Client {
 
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
-	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
 	}
 
 	public String getPassword() {
@@ -113,6 +111,14 @@ public class Client {
 
 	public void setIndesirable(Boolean indesirable) {
 		this.indesirable = indesirable;
+	}
+
+	public String getPasswordConf() {
+		return passwordConf;
+	}
+
+	public void setPasswordConf(String passwordConf) {
+		this.passwordConf = passwordConf;
 	}
 
 	public Date getDateInscription() {

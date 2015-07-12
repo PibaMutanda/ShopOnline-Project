@@ -19,4 +19,6 @@ public interface ClientRepository extends GenericRepository<Client> {
 	Client findByEmail(String email);
 
 	Client findByDateInscr(Date date);
+	
+	Client findByEmailPassword(String email,String password);
 }
