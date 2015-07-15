@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -23,7 +24,7 @@ public class Article {
 	private Double prix;
 	private Boolean enVente;
 
-	@JoinColumn
+	@ManyToOne
 	private Categorie categ;
 
 	public String getDenomination() {
