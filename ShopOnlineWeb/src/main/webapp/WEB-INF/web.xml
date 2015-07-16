@@ -8,9 +8,31 @@
     	<servlet-name>ClientServlet</servlet-name>
     	<servlet-class>be.shop.servlet.ClientServlet</servlet-class>
     </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>ArticleServlet</display-name>
+    	<servlet-name>ArticleServlet</servlet-name>
+    	<servlet-class>be.shop.servlet.ArticleServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>CategorieServlet</display-name>
+    	<servlet-name>CategorieServlet</servlet-name>
+    	<servlet-class>be.shop.servlet.CategorieServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
     	<servlet-name>ClientServlet</servlet-name>
     	<url-pattern>/ClientServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>ArticleServlet</servlet-name>
+    	<url-pattern>/articleServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>CategorieServlet</servlet-name>
+    	<url-pattern>/CategorieServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

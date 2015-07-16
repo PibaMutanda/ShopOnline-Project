@@ -35,7 +35,6 @@ public class ClientServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	           ArrayList<String> messageErrors = new ArrayList<String>();
-	           Client client = new Client();
 	           String nom = request.getParameter("nom").trim();
 	           String prenom = request.getParameter("prenom").trim();
 	           String rue = request.getParameter("rue").trim();
@@ -67,6 +66,7 @@ public class ClientServlet extends HttpServlet {
 	        	   getServletContext().getRequestDispatcher("/clientregister.jsp").forward(request, response);
 	           }
 	           else{
+	        	    Client client = new Client();
 	        	    client.setNom(nom);   client.setPrenom(prenom);   client.setCp(cp);   client.setEmail(email);
 	        	    client.setDateInscription(new Date());  client.setLocalite(localite);  client.setRue(rue);
 	        	    client.setPassword(password);   client.setPasswordConf(passwordConf);

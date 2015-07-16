@@ -13,5 +13,5 @@ import be.shop.entity.Categorie;
  */
 @Local
 public interface CategorieRepository extends GenericRepository<Categorie> {
-
+      Categorie findByName(String name);
 }

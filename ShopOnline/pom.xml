@@ -59,11 +59,11 @@
 		<!-- Annotation processor to generate the JPA 2.0 metamodel classes for 
 			typesafe criteria queries -->
 		<dependency>
-	<groupId>org.hibernate</groupId>
-	<artifactId>hibernate-jpamodelgen</artifactId>
-	<version>4.3.10.Final</version>
-</dependency>
-		
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-jpamodelgen</artifactId>
+			<version>4.3.10.Final</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.jboss.spec.javax.ejb</groupId>
 			<artifactId>jboss-ejb-api_3.2_spec</artifactId>
@@ -73,6 +73,13 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>1.4.186</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun</groupId>
+			<artifactId>tools</artifactId>
+			<version>1.8</version>
+			<scope>system</scope>
+			<systemPath>C:\Program Files\Java\jdk1.8.0_25\lib\tools.jar</systemPath>
 		</dependency>
 		<!-- Easy mock -->
 		<dependency>
