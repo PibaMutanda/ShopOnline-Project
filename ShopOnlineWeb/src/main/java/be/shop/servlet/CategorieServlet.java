@@ -53,7 +53,7 @@ public class CategorieServlet extends HttpServlet {
 		}
 		if (messageErrors.size() > 0) {
 			request.setAttribute("messageErrors", messageErrors);
-			getServletContext().getRequestDispatcher("/categorieregister.jsp")
+			getServletContext().getRequestDispatcher("/WEB-INF/views/categorieregister.jsp")
 					.forward(request, response);
 		} else {
 			categorie = new Categorie();
@@ -61,7 +61,7 @@ public class CategorieServlet extends HttpServlet {
 			categorieRepository.save(categorie);
 			request.setAttribute("messageSuccess",
 					"Catégorie enregistrée avec succès");
-			getServletContext().getRequestDispatcher("/index.jsp").forward(
+			getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(
 					request, response);
 		}
 	}
