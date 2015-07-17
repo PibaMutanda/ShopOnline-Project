@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.jboss.resteasy.util.GetRestful;
-
 import be.shop.entity.Categorie;
 import be.shop.repository.CategorieRepository;
 import be.shop.service.CategorieServices;
@@ -53,7 +51,7 @@ public class CategorieServlet extends HttpServlet {
 		}
 		if (messageErrors.size() > 0) {
 			request.setAttribute("messageErrors", messageErrors);
-			getServletContext().getRequestDispatcher("/WEB-INF/views/categorieregister.jsp")
+			getServletContext().getRequestDispatcher("WEB-INF/views/categorieregister.jsp")
 					.forward(request, response);
 		} else {
 			categorie = new Categorie();
@@ -61,7 +59,7 @@ public class CategorieServlet extends HttpServlet {
 			categorieRepository.save(categorie);
 			request.setAttribute("messageSuccess",
 					"Catégorie enregistrée avec succès");
-			getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(
+			getServletContext().getRequestDispatcher("WEB-INF/index.jsp").forward(
 					request, response);
 		}
 	}
