@@ -11,6 +11,11 @@
 <title></title>
 </head>
 <body>
+	<div id="msgError">
+		<c:forEach items="${messageErrors }" var="message">
+   ${message } <br>
+		</c:forEach>
+	</div>
 	<form class="form-horizontal" method="post" action="ClientServlet">
 		<div class="form-group">
 			<label for="inputNom" class="col-sm-2 control-label">Nom *</label>
@@ -20,7 +25,8 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="inputPrenom" class="col-sm-2 control-label">Pr&eacute;nom </label>
+			<label for="inputPrenom" class="col-sm-2 control-label">Pr&eacute;nom
+			</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" id="inputPrenom"
 					placeholder="Prénom" name="prenom">
@@ -29,13 +35,13 @@
 
 		<div class="form-inline">
 			<div class="form-group">
-				<label class="sr-only" for="inputRue">Rue *</label> <input type="text"
-					class="form-control" id="inputRue" placeholder="Rue et Numéro"
-					name="rue">
+				<label class="sr-only" for="inputRue">Rue *</label> <input
+					type="text" class="form-control" id="inputRue"
+					placeholder="Rue et Numéro" name="rue">
 			</div>
 			<div class="form-group">
-				<label class="sr-only" for="inputLocalite">Localit&eacute; *</label> <input
-					type="text" class="form-control" id="inputLocalite"
+				<label class="sr-only" for="inputLocalite">Localit&eacute; *</label>
+				<input type="text" class="form-control" id="inputLocalite"
 					placeholder="Localité" name="localite">
 			</div>
 			<div class="form-group">
@@ -46,14 +52,16 @@
 
 		</div>
 		<div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Email *</label>
+			<label for="inputEmail3" class="col-sm-2 control-label">Email
+				*</label>
 			<div class="col-sm-10">
 				<input type="email" class="form-control" id="inputEmail3"
 					placeholder="Email" name="email">
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="inputPassword3" class="col-sm-2 control-label">Password *</label>
+			<label for="inputPassword3" class="col-sm-2 control-label">Password
+				*</label>
 			<div class="col-sm-10">
 				<input type="password" class="form-control" id="inputPassword3"
 					placeholder="Password" name="password">

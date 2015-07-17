@@ -11,13 +11,19 @@
 <title></title>
 </head>
 <body>
-<form   action="CategorieServlet" method="post" class="form-inline">
-  <div class="form-group">
-    <label for="exampleInputName2">Nom Catégorie</label>
-    <input type="text" class="form-control" id="exampleInputName2" placeholder="Catégorie" name="categ" required="required">
-  </div>
-  <button type="submit" class="btn btn-primary">Enregistrer</button>
-</form>
+<div id="msgError">
+	<c:forEach items="${messageErrors }" var="message">
+   ${message } <br>
+	</c:forEach>
+</div>	
+	<form action="CategorieServlet" method="post" class="form-inline">
+		<div class="form-group">
+			<label for="exampleInputName2">Nom Catégorie</label> <input
+				type="text" class="form-control" id="exampleInputName2"
+				placeholder="Catégorie" name="categ" required="required">
+		</div>
+		<button type="submit" class="btn btn-primary">Enregistrer</button>
+	</form>
 </body>
 <script src="<%=request.getContextPath()%>/resources/js/jquery.js"></script>
 <script

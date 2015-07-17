@@ -10,7 +10,7 @@ import be.shop.repository.CategorieRepository;
 import be.shop.service.CategorieServices;
 
 @Stateless
-public class CategorieServicesImpl  implements CategorieServices{
+public class CategorieServicesImpl   implements CategorieServices {
 	
 	@EJB
 	private CategorieRepository categorieRepository;

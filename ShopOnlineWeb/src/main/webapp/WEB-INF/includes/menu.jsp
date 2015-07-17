@@ -2,7 +2,8 @@
 <head>
 </head>
 <body>
-       <a href="/clientregister.jsp">S'inscrire</a>
-       <a href="/produitregister.jsp">Ajout Produit</a>
+       <a href="/views/clientregister.jsp">S'inscrire</a>
+       <a href="/views/produitregister.jsp">Ajout Article</a>
+       <a href="/views/categorieregister.jsp">Ajout </a>
 </body>
 </html>

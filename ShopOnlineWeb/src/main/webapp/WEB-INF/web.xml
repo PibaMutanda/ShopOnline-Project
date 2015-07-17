@@ -28,7 +28,7 @@
     </servlet-mapping>
     <servlet-mapping>
     	<servlet-name>ArticleServlet</servlet-name>
-    	<url-pattern>/articleServlet</url-pattern>
+    	<url-pattern>/ArticleServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
     	<servlet-name>CategorieServlet</servlet-name>
