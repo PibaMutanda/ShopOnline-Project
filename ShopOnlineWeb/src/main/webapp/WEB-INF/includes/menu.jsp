@@ -2,8 +2,8 @@
 <head>
 </head>
 <body>
-       <a href="<%=request.getContextPath()%>/views/clientregister.jsp">S'inscrire</a>
-       <a href="<%=request.getContextPath()%>/views/produitregister.jsp">Ajout Article</a>
-       <a href="<%=request.getContextPath()%>/views/categorieregister.jsp">Ajout </a>
+       <a href="<%=request.getContextPath()%>/WEB-INF/views/clientregister.jsp">S'inscrire</a><br>
+       <a href="<%=request.getContextPath()%>WEB-INF/views/produitregister.jsp">Ajout Article</a><br>
+       <a href="<%=request.getContextPath()%>/WEB-INF/views/categorieregister.jsp">Ajout </a>
 </body>
 </html>
