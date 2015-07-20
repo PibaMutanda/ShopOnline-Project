@@ -25,9 +25,9 @@
 		<button type="submit" class="btn btn-primary">Enregistrer</button>
 	</form>
 </body>
-<script src="resources/js/jquery.js"></script>
+<script src="${request.contextPath }resources/js/jquery.js"></script>
 <script
-	src="resources/js/jquery-ui.min.js"></script>
+	src="${request.contextPath }resources/js/jquery-ui.min.js"></script>
 <script
-	src="resources/js/bootstrap.min.js"></script>
+	src="${request.contextPath }resources/js/bootstrap.min.js"></script>
 </html>
