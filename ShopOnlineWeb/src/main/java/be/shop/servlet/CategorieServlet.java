@@ -39,6 +39,15 @@ public class CategorieServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("/WEB-INF/views/categorieregister.jsp").forward(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		List<String> messageErrors = new ArrayList<String>();
 		Categorie categorie = null;
 		String categ = request.getParameter("categ");
@@ -62,15 +71,6 @@ public class CategorieServlet extends HttpServlet {
 			getServletContext().getRequestDispatcher("WEB-INF/index.jsp").forward(
 					request, response);
 		}
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
 	}
 
 }

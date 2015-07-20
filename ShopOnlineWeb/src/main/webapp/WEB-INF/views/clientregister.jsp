@@ -14,7 +14,7 @@
    ${message } <br>
 		</c:forEach>
 	</div>
-	<form class="form-horizontal" method="post" action="ClientServlet">
+	<form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/clientServletRegister.do">
 		<div class="form-group">
 			<label for="inputNom" class="col-sm-2 control-label">Nom *</label>
 			<div class="col-sm-10">

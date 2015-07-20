@@ -24,15 +24,15 @@
     </servlet>
     <servlet-mapping>
     	<servlet-name>ClientServlet</servlet-name>
-    	<url-pattern>/ClientServlet</url-pattern>
+    	<url-pattern>/clientServletRegister.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
     	<servlet-name>ArticleServlet</servlet-name>
-    	<url-pattern>/ArticleServlet</url-pattern>
+    	<url-pattern>/articleServletRegister.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
     	<servlet-name>CategorieServlet</servlet-name>
-    	<url-pattern>/CategorieServlet</url-pattern>
+    	<url-pattern>/categorieServletRegister.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -50,7 +50,7 @@
 		<!-- <dispatcher>FORWARD</dispatcher> <dispatcher>REQUEST</dispatcher> -->
 	</filter-mapping> 
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>  
+        <welcome-file>/WEB-INF/views/home.jsp</welcome-file>  
      </welcome-file-list>
      
  </web-app>

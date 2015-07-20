@@ -18,7 +18,7 @@
    ${message } <br>
 		</c:forEach>
 	</div>
-	<form class="form-horizontal" method="post" action="ArticleServlet">
+	<form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/articleServletRegister.do">
 		<div class="form-group">
 			<label for="inputCateg" class="col-sm-2 control-label">Cat&eacute;gorie
 				*</label>
