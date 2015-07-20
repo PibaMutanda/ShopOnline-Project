@@ -31,7 +31,7 @@
 			</div>
 		</div>
 
-		<div class="form-inline">
+		<div class="form-group">
 			<div class="form-group">
 				<label class="sr-only" for="inputRue">Rue *</label> <input
 					type="text" class="form-control" id="inputRue"

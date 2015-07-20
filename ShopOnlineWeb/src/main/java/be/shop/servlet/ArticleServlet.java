@@ -59,7 +59,7 @@ public class ArticleServlet extends HttpServlet {
 			messageErros.add("Indiquez le nom de l'article");
 	   if(messageErros.size()>0){
 		   request.setAttribute("messageErrors", messageErros);
-		   request.getRequestDispatcher("WEB-INF/views/articleregister.jsp").forward(request, response);
+		   request.getRequestDispatcher("/WEB-INF/views/articleregister.jsp").forward(request, response);
 	   }
 	   else{
 		   Article article2 = new Article();
@@ -70,7 +70,7 @@ public class ArticleServlet extends HttpServlet {
 		   article2.setEnVente(Boolean.parseBoolean(enVente));
 		   articleRepository.save(article2);
 		   request.setAttribute("messageSuccess", "Article enregistré avec succèss");
-		   request.getRequestDispatcher("WEB-INF/index.jsp").forward(request, response);
+		   request.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(request, response);
 	   }
 	}
 

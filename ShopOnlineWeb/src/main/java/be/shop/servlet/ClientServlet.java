@@ -70,7 +70,7 @@ public class ClientServlet extends HttpServlet {
       	   messageErrors.add("Indiquez le même mot de passe");
          if(messageErrors.size()>0){
       	   request.setAttribute("messageErrors", messageErrors);
-      	   getServletContext().getRequestDispatcher("WEB-INF/views/clientregister.jsp").forward(request, response);
+      	   getServletContext().getRequestDispatcher("/WEB-INF/views/clientregister.jsp").forward(request, response);
          }
          else{
       	    Client client = new Client();
@@ -78,7 +78,7 @@ public class ClientServlet extends HttpServlet {
       	    client.setDateInscription(new Date());  client.setLocalite(localite);  client.setRue(rue);
       	    client.setPassword(password);   client.setPasswordConf(passwordConf);
       	    clientServices.registerClient(client);
-      	    getServletContext().getRequestDispatcher("WEB-INF/index.jsp").forward(request, response);
+      	    getServletContext().getRequestDispatcher("/WEB-INF/views/home.jsp").forward(request, response);
          }
 	}
 
