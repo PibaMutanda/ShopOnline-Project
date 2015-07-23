@@ -10,7 +10,7 @@ import be.shop.entity.Client;
 import be.shop.repository.ClientRepository;
 import be.shop.service.impl.ClientServicesImpl;
 
-public class ClientTest {
+public class ClientRepositoryTest {
 
 	private ClientRepository clientRepository = null;
 	private ClientServicesImpl clientService = null;

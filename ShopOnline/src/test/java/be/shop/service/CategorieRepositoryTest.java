@@ -13,7 +13,7 @@ import be.shop.entity.Categorie;
 import be.shop.repository.CategorieRepository;
 import be.shop.service.impl.CategorieServicesImpl;
 
-public class CategorieTest {
+public class CategorieRepositoryTest {
 
 	private CategorieRepository categorieRepository=null;
 	private CategorieServicesImpl categorieServicesImpl=null;

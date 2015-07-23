@@ -48,7 +48,7 @@ public abstract class GenericRepositoryJpa<T> implements GenericRepository<T> {
 	@Override
 	public List<T> findAll() {
 		return getEntityManager().createNamedQuery(
-				persistenceClass.getSimpleName() + "findAll", persistenceClass)
+				persistenceClass.getSimpleName() + ".findAll", persistenceClass)
 				.getResultList();
 	}
 
