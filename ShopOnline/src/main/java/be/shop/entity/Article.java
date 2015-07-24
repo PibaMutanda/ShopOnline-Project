@@ -11,8 +11,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Articles")
 @NamedQueries({
-		@NamedQuery(name = "Article.findByCateg", query = "select a from Article a where a.categ.id=:categ"),
-		@NamedQuery(name = "Article.findAll", query = "select a from Article a") })
+		@NamedQuery(name = "ArticleRepository.findByCateg", query = "select a from ArticleRepository a where a.categ=:categ"),
+		@NamedQuery(name = "ArticleRepository.findAll", query = "select a from ArticleRepository a") })
 public class Article {
 
 	@Id

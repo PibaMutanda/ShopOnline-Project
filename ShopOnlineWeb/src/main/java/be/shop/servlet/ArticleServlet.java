@@ -69,7 +69,7 @@ public class ArticleServlet extends HttpServlet {
 		   article2.setPrix(Double.parseDouble(prixStr));
 		   article2.setEnVente(Boolean.parseBoolean(enVente));
 		   articleRepository.save(article2);
-		   request.setAttribute("messageSuccess", "Article enregistré avec succèss");
+		   request.setAttribute("messageSuccess", "ArticleRepositoryTest enregistré avec succèss");
 		   request.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(request, response);
 	   }
 	}

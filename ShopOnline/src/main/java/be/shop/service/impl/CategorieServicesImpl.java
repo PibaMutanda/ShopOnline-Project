@@ -12,7 +12,7 @@ import be.shop.service.CategorieServices;
 @Stateless
 public class CategorieServicesImpl   implements CategorieServices {
 	
-	@EJB
+	@EJB(name="categorieRepository")
 	private CategorieRepository categorieRepository;
 
 	public void setCategorieRepository(CategorieRepository categorieRepository) {

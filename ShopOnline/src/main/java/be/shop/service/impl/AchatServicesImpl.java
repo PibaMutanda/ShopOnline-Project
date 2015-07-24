@@ -15,7 +15,7 @@ import be.shop.service.AchatServices;
 @Stateless
 public class AchatServicesImpl implements AchatServices {
 
-	@EJB
+	@EJB(name="achatRepository")
 	private AchatRepository achatRepository;
 	
 	public void setAchatRepository(AchatRepository achatRepository) {
