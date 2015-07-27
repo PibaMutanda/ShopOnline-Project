@@ -32,11 +32,12 @@ public class CategorieRepositoryTest {
 		Categorie categorie2 = new Categorie(); categorie2.setNom("HI-FI");
 		Categorie categorie3 = new Categorie();
 		categories.add(categorie3); categories.add(categorie2);   categories.add(categorie);
-		expect(categorieRepository.findAll()).andReturn(categories);
+		categorieRepository.save(categorie2);    categorieRepository.save(categorie2);    categorieRepository.save(categorie);
+		expect(categorieRepository.findAll()).andReturn(categories).anyTimes();
 		replay(categorieRepository);
+		assertEquals(categorieServicesImpl.findAll(), categories);
 		assertEquals(3, categorieServicesImpl.findAll().size());
-		verify(categorieRepository);
-		
+				
 	}
 	
 	@Test

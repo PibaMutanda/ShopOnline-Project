@@ -1,4 +1,4 @@
-package be.shop.repository;
+package be.shop.service;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import be.shop.entity.Achat;
 import be.shop.entity.Commande;
 
 @Local
-public interface CommandeRepository extends GenericRepository<Commande> {
+public interface CommandeServices {
 
 	List<Commande> findByAchat(Achat achat);
-
+	
 	List<Commande> findByArticle(Long idArticle);
 }

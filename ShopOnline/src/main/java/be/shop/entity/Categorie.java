@@ -1,11 +1,15 @@
 package be.shop.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +25,19 @@ public class Categorie {
     
 	@Column(unique=true)
 	private String nom;
+
+    @OneToMany(mappedBy="categ")
+    List<Article> articles = new ArrayList<Article>();
+    
+    
+    
+	public List<Article> getArticles() {
+		return articles;
+	}
+
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
+	}
 
 	public String getNom() {
 		return nom;

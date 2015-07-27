@@ -37,6 +37,7 @@ public class ArticleRepositoryTest {
 		article1.setCateg(categorie);
 		article2.setCateg(categorie);
 		listArt.add(article1);   listArt.add(article2);
+		articleRepository.save(article2);    articleRepository.save(article1);
 		expect(articleRepository.findByCateg(categorie)).andReturn(listArt).times(3);
 		replay(articleRepository);
 		assertEquals(articleServiceImpl.findByCateg(categorie).get(1), article2);

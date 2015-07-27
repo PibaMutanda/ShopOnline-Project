@@ -23,7 +23,7 @@ public class BlogRepositoryJpa extends GenericRepositoryJpa<Blog> implements
 	public List<Blog> findByTitre(String titre) {
 
 		return getEntityManager().createNamedQuery("Blog.findByTitre")
-				.setParameter("titre", titre).getResultList();
+				.setParameter("titre","%"+ titre.toLowerCase() +"%").getResultList();
 	}
 
 }

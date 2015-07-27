@@ -18,24 +18,31 @@ import javax.persistence.Table;
 @NamedQueries({
 		@NamedQuery(name = "Commande.findAll", query = "select c from Commande c"),
 		@NamedQuery(name = "Commande.findByArticle", query = "select c from Commande c join c.articles a where a.id=:id"),
-		@NamedQuery(name = "Commande.findByAchat", query = "select c from Commande c where c.achat.id=:achat") })
+		@NamedQuery(name = "Commande.findByAchat", query = "select c from Commande c where c.achat=:achat") })
 public class Commande {
 
 	@Id
 	@GeneratedValue
 	private Long id;
 	
-	@ManyToOne
-	private Achat achat;
+	@OneToMany
+	private List<Achat> achats = new ArrayList<Achat>();
 	@OneToMany
 	private List<Article> articles = new ArrayList<Article>();
 
-	public Achat getAchat() {
-		return achat;
+	
+
+	public List<Achat> getAchats() {
+		return achats;
 	}
 
-	public void setAchat(Achat achat) {
-		this.achat = achat;
+	public void setAchats(List<Achat> achats) {
+		this.achats = achats;
+	}
+
+	
+	public void addAchat(Achat achat){
+		achats.add(achat);
 	}
 
 	public List<Article> getArticles() {

@@ -15,7 +15,7 @@ import javax.persistence.TemporalType;
 @Table(name="Blogs")
 @NamedQueries({
 		@NamedQuery(name = "Blog.findAll", query = "select b from Blog b"),
-		@NamedQuery(name = "Blog.findByTitre", query = "select b from Blog b where b.titre like '%titre%'"), })
+		@NamedQuery(name = "Blog.findByTitre", query = "select b from Blog b where b.titre like :titre"), })
 public class Blog {
 
 	@Id
@@ -57,4 +57,11 @@ public class Blog {
 		return id;
 	}
 
+	@Override
+	public String toString() {
+		return "Blog [id=" + id + ", titre=" + titre + ", texte=" + texte
+				+ ", dateBlog=" + dateBlog + "]";
+	}
+
+	
 }

@@ -38,6 +38,8 @@ public class AchatRepositoryTest {
 		achat2.setDateAchat(d);
 		achats.add(achat1);
 		achats.add(achat2);
+		achatRepository.save(achat2);     achatRepository.save(achat1);   
+		
 		expect(achatRepository.findByDate(d)).andReturn(achats).times(2);
 		replay(achatRepository);
 		assertEquals(achatServiceImpl.findByDate(d).get(0), achat1);
@@ -59,11 +61,12 @@ public class AchatRepositoryTest {
 		achat1.setClient(client1);
 		achat2.setClient(client1);
 		achat3.setClient(client2);
+		achatRepository.save(achat3);    achatRepository.save(achat2);    achatRepository.save(achat1);
 		expect(achatRepository.findByClient(client1)).andReturn(achatCli1)
 				.anyTimes();
 		expect(achatRepository.findByClient(client2)).andReturn(achatCli2);
 		replay(achatRepository);
-		assertEquals(achatServiceImpl.findByClient(client2).size(), 1);
+		assertEquals(achatServiceImpl.findByClient(client2), achatCli2);
 		assertEquals(achatServiceImpl.findByClient(client1).size(), 2);
 
 	}

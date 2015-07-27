@@ -20,7 +20,7 @@ public class CommentaireBlogRepositoryJpa extends
 	public List<CommentaireBlog> findByClient(Long client) {
 		return getEntityManager()
 				.createNamedQuery("CommentaireBlog.findByClient")
-				.setParameter("id", client).getResultList();
+				.setParameter("client", client).getResultList();
 	}
 
 }

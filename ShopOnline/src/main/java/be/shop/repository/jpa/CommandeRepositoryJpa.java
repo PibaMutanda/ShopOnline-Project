@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 
+import be.shop.entity.Achat;
 import be.shop.entity.Commande;
 import be.shop.repository.CommandeRepository;
 
@@ -16,9 +17,9 @@ public class CommandeRepositoryJpa extends GenericRepositoryJpa<Commande>
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Commande> findByAchat(Long idAchat) {
+	public List<Commande> findByAchat(Achat achat) {
 		return getEntityManager().createNamedQuery("Commande.findByAchat")
-				.setParameter("achat", idAchat).getResultList();
+				.setParameter("achat", achat).getResultList();
 	}
 
 	@SuppressWarnings("unchecked")
