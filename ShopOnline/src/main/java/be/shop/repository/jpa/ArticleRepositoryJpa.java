@@ -21,7 +21,7 @@ public class ArticleRepositoryJpa extends GenericRepositoryJpa<Article> implemen
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Article> findByCateg(Categorie categ) {
-		return getEntityManager().createNamedQuery("ArticleRepository.findByCateg").setParameter("categ", categ).getResultList();
+		return getEntityManager().createNamedQuery("Article.findByCateg").setParameter("categ", categ).getResultList();
 	}
 
 }
