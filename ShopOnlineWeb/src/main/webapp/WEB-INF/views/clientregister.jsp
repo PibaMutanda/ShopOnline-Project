@@ -14,7 +14,8 @@
    ${message } <br>
 		</c:forEach>
 	</div>
-	<form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/clientServletRegister.do">
+	<form class="form-horizontal" method="post"
+		action="${pageContext.request.contextPath}/clientServletRegister.do">
 		<div class="form-group">
 			<label for="inputNom" class="col-sm-2 control-label">Nom *</label>
 			<div class="col-sm-10">
@@ -37,11 +38,15 @@
 					type="text" class="form-control" id="inputRue"
 					placeholder="Rue et Numéro" name="rue">
 			</div>
+		</div>
+		<div class="form-group">
 			<div class="form-group">
 				<label class="sr-only" for="inputLocalite">Localit&eacute; *</label>
 				<input type="text" class="form-control" id="inputLocalite"
 					placeholder="Localité" name="localite">
 			</div>
+		</div>
+		<div class="form-group">
 			<div class="form-group">
 				<label class="sr-only" for="inputCp">Code Postal *</label> <input
 					type="text" class="form-control" id="inputCp"

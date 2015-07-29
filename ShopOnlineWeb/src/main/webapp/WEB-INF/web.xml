@@ -22,6 +22,27 @@
     	<servlet-name>CategorieServlet</servlet-name>
     	<servlet-class>be.shop.servlet.CategorieServlet</servlet-class>
     </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>ListCategServlet</display-name>
+    	<servlet-name>ListCategServlet</servlet-name>
+    	<servlet-class>be.shop.servlet.ListCategServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>ListArticleServlet</display-name>
+    	<servlet-name>ListArticleServlet</servlet-name>
+    	<servlet-class>be.shop.servlet.ListArticleServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>UpdateServletArticle</display-name>
+    	<servlet-name>UpdateServletArticle</servlet-name>
+    	<servlet-class>be.shop.servlet.UpdateServletArticle</servlet-class>
+    </servlet>
     <servlet-mapping>
     	<servlet-name>ClientServlet</servlet-name>
     	<url-pattern>/clientServletRegister.do</url-pattern>
@@ -33,6 +54,18 @@
     <servlet-mapping>
     	<servlet-name>CategorieServlet</servlet-name>
     	<url-pattern>/categorieServletRegister.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>ListCategServlet</servlet-name>
+    	<url-pattern>/displayListCateg.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>ListArticleServlet</servlet-name>
+    	<url-pattern>/displayListArticle.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>UpdateServletArticle</servlet-name>
+    	<url-pattern>/updateServletArticle.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
