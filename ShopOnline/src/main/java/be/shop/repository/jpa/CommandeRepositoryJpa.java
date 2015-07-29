@@ -19,7 +19,7 @@ public class CommandeRepositoryJpa extends GenericRepositoryJpa<Commande>
 	@Override
 	public List<Commande> findByAchat(Achat achat) {
 		return getEntityManager().createNamedQuery("Commande.findByAchat")
-				.setParameter("achat", achat).getResultList();
+				.setParameter("achat", achat.getId()).getResultList();
 	}
 
 	@SuppressWarnings("unchecked")
