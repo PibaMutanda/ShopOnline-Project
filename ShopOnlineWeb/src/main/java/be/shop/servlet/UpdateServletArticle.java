@@ -49,7 +49,7 @@ public class UpdateServletArticle extends HttpServlet {
 		Article article = articleRepository.findById(Long.parseLong(idStr));
 		article.setDenomination(denomination); 
 		article.setPrix(Double.parseDouble(prix));
-		article.setEnVente(Boolean.parseBoolean(enVente));
+		article.setEnVente(enVente.charAt(0));
 		articleRepository.save(article);
 		response.sendRedirect("/WEB-INF/views/displaListArticles.jsp");
 	}

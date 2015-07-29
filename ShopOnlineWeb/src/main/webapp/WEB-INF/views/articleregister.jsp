@@ -52,8 +52,8 @@
 				En Vente</label>
 			<div class="col-sm-10">
 				<input type="radio" class="form-control" id="inputVente"
-					name="enVente"> Oui <input type="radio"
-					class="form-control" id="inputVente" name="enVente"> Non
+					name="enVente" value="1"> Oui <input type="radio"
+					class="form-control" id="inputVente" name="enVente" value="0"> Non
 			</div>
 		</div>
 		<div class="form-group">

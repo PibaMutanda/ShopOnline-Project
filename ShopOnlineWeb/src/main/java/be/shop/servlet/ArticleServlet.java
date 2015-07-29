@@ -67,7 +67,7 @@ public class ArticleServlet extends HttpServlet {
 		   article2.setCateg(categorie);
 		   article2.setDenomination(article);
 		   article2.setPrix(Double.parseDouble(prixStr));
-		   article2.setEnVente(Boolean.parseBoolean(enVente));
+		   article2.setEnVente(enVente.charAt(0));
 		   articleRepository.save(article2);
 		   request.setAttribute("messageSuccess", "ArticleRepositoryTest enregistré avec succèss");
 		   request.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(request, response);

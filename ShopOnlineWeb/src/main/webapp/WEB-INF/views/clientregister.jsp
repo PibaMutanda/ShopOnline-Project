@@ -34,26 +34,22 @@
 
 		<div class="form-group">
 			<div class="form-group">
-				<label class="sr-only" for="inputRue">Rue *</label> <input
+				<label class="sr-only" for="inputRue">Rue</label> <input
 					type="text" class="form-control" id="inputRue"
 					placeholder="Rue et Numéro" name="rue">
 			</div>
-		</div>
-		<div class="form-group">
 			<div class="form-group">
 				<label class="sr-only" for="inputLocalite">Localit&eacute; *</label>
 				<input type="text" class="form-control" id="inputLocalite"
 					placeholder="Localité" name="localite">
 			</div>
-		</div>
-		<div class="form-group">
 			<div class="form-group">
 				<label class="sr-only" for="inputCp">Code Postal *</label> <input
 					type="text" class="form-control" id="inputCp"
 					placeholder="Code Postal" name="cp">
 			</div>
-
 		</div>
+	
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">Email
 				*</label>

@@ -22,7 +22,7 @@ public class Article {
 
 	private String denomination;
 	private Double prix;
-	private Boolean enVente;
+	private char enVente;
 
 	@ManyToOne
 	@JoinColumn
@@ -44,11 +44,13 @@ public class Article {
 		this.prix = prix;
 	}
 
-	public Boolean getEnVente() {
+	
+
+	public char getEnVente() {
 		return enVente;
 	}
 
-	public void setEnVente(Boolean enVente) {
+	public void setEnVente(char enVente) {
 		this.enVente = enVente;
 	}
 
