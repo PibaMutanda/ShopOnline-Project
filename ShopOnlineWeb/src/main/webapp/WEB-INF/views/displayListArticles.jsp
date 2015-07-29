@@ -21,8 +21,8 @@
 					<td>${article.denomination }</td>
 					<td>${article.prix }</td>
 					<td><c:choose>
-							<c:when test="${article.enVente eq 0 }">Nom</c:when>
-							<c:when test="${article.enVente eq 1 }">Oui</c:when>
+							<c:when test="${article.enVente eq '0' }">Nom</c:when>
+							<c:when test="${article.enVente eq '1' }">Oui</c:when>
 						</c:choose></td>
 					<td><a
 						href="${pageContext.request.contextPath}/updateServletArticle.do?id=${article.id}"><span

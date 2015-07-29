@@ -43,6 +43,13 @@
     	<servlet-name>UpdateServletArticle</servlet-name>
     	<servlet-class>be.shop.servlet.UpdateServletArticle</servlet-class>
     </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>DeleteServletArticle</display-name>
+    	<servlet-name>DeleteServletArticle</servlet-name>
+    	<servlet-class>be.shop.servlet.DeleteServletArticle</servlet-class>
+    </servlet>
     <servlet-mapping>
     	<servlet-name>ClientServlet</servlet-name>
     	<url-pattern>/clientServletRegister.do</url-pattern>
@@ -66,6 +73,10 @@
     <servlet-mapping>
     	<servlet-name>UpdateServletArticle</servlet-name>
     	<url-pattern>/updateServletArticle.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>DeleteServletArticle</servlet-name>
+    	<url-pattern>/deleteServletArticle.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

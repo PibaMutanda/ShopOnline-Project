@@ -51,7 +51,7 @@ public class UpdateServletArticle extends HttpServlet {
 		article.setPrix(Double.parseDouble(prix));
 		article.setEnVente(enVente.charAt(0));
 		articleRepository.save(article);
-		response.sendRedirect("/WEB-INF/views/displaListArticles.jsp");
+		response.sendRedirect(request.getContextPath()+"/displayListArticle.do");
 	}
 
 }
