@@ -35,7 +35,8 @@ public class DeleteServletArticle extends HttpServlet {
 		String idstr = request.getParameter("id");
 		Article article = articleRepository.findById(Long.parseLong(idstr));
 		articleRepository.delete(article);
-		request.getRequestDispatcher("/WEB-INF/views/displayListArticles.jsp").forward(request, response);
+		response.sendRedirect(request.getContextPath()+"/displayListCateg.do");
+	//	request.getRequestDispatcher("/WEB-INF/views/displayListArticles.jsp").forward(request, response);
 	}
 
 	

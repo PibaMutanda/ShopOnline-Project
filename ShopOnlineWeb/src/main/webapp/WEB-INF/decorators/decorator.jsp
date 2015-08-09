@@ -21,12 +21,18 @@
 <%@include file="/WEB-INF/includes/header.jsp"%>
 </header>
 </div>
-<div>
+<div class="row">
 <article>
-<menu>
+<div class="container-fluid">
+<div class="col-md-3">
 <%@include file="/WEB-INF/includes/menu.jsp"  %>
-</menu>
-<decorator:body />
+</div>
+</div>
+<div class="container">
+<div class="col-md-12 shool-decorator-body"> 
+ <decorator:body />
+</div>
+</div> 
 </article>
 </div>
 <div>
