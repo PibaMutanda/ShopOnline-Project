@@ -28,7 +28,8 @@
 						href="${pageContext.request.contextPath}/updateServletArticle.do?id=${article.id}"><span
 							class="glyphicon glyphicon-pencil" title="Modifier l'article"></span></a></td>
 					<td><a
-						href="javascript:deleteArticleFunction(${pageContext.request.contextPath}/deleteServletArticle.do?id=${article.id})"><span
+						href="${pageContext.request.contextPath}/deleteServletArticle.do?id=${article.id})"
+						onclick="return(confirm('Voulez-vous vraiment supprimer l\'article sélectionné ?'))"><span
 							class="glyphicon glyphicon-remove" title="Supprimer l'article"></span></a></td>
 				</tr>
 			</c:forEach>

@@ -39,7 +39,7 @@ public class ListArticleServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		   String idCateg = request.getParameter("id");
-		   Categorie categ = categorieServices.findById(Long.parseLong(idCateg));
+		   Categorie categ = categorieServices.findById(Long.parseLong(idCateg.trim()));
 	       List<Article> articles = articleServices.findByCateg(categ);
 	       request.setAttribute("articles", articles);
 	       request.getRequestDispatcher("/WEB-INF/views/displayListArticles.jsp").forward(request, response);
