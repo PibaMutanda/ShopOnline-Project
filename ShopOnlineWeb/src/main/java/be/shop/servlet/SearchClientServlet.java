@@ -47,7 +47,7 @@ public class SearchClientServlet extends HttpServlet {
 			messageErros.add("Saisir l'adresse email");
 		Client client = clientRepository.findByEmail(email);
 		if(client==null)
-			messageErros.add("client non repertorié dans notre système");
+			messageErros.add("client non repertori&eacute; dans notre syst&egrave;me");
 		if(messageErros.size()>0){
 			request.setAttribute("messageErrors", messageErros);
 			request.getRequestDispatcher("/WEB-INF/views/displayClient.jsp").forward(request, response);

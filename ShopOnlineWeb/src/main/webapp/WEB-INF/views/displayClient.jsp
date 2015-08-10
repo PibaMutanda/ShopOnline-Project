@@ -25,12 +25,12 @@ ${erreur } <br>
 	<c:if test="${not empty client }">
 		<table class="table table-condensed">
 			<tr class="info">
-				<th>Pr&eacut;nom</th>
+				<th>Pr&eacute;nom</th>
 				<th>Nom</th>
 				<th>E-mail</th>
 				<th>Rue</th>
 				<th>Code postal</th>
-				<th>Localit&eacut;</th>
+				<th>Localit&eacute;</th>
 				<th>Date inscription</th>
 				<th></th>
 				<th></th>
@@ -89,7 +89,7 @@ ${erreur } <br>
 			</label><br>
 			<br>
 			<input type="hidden" name="id" value="${clientModif.id }">
-			<button type="button" class="btn btn-primary">Modifier</button>
+			<button type="submit" class="btn btn-primary">Modifier</button>
 		</form>
 	</c:if>
 </body>
