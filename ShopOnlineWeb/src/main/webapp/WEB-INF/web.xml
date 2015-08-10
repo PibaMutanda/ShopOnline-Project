@@ -57,6 +57,20 @@
     	<servlet-name>SearchClientServlet</servlet-name>
     	<servlet-class>be.shop.servlet.SearchClientServlet</servlet-class>
     </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>UpdateClientServlet</display-name>
+    	<servlet-name>UpdateClientServlet</servlet-name>
+    	<servlet-class>be.shop.servlet.UpdateClientServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>DeleteClientServlet</display-name>
+    	<servlet-name>DeleteClientServlet</servlet-name>
+    	<servlet-class>be.shop.servlet.DeleteClientServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
     	<servlet-name>ClientServlet</servlet-name>
     	<url-pattern>/clientServletRegister.do</url-pattern>
@@ -88,6 +102,14 @@
     <servlet-mapping>
     	<servlet-name>SearchClientServlet</servlet-name>
     	<url-pattern>/searchClientServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>UpdateClientServlet</servlet-name>
+    	<url-pattern>/updateClient.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>DeleteClientServlet</servlet-name>
+    	<url-pattern>/deleteClient.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

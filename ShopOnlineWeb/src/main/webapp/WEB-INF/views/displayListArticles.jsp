@@ -15,6 +15,7 @@
 				<th>Nom</th>
 				<th>Prix</th>
 				<th>En Vente</th>
+				<th></th>
 			</tr>
 			<c:forEach items="${articles }" var="article">
 				<tr>
@@ -36,13 +37,6 @@
 		</table>
 	</div>
 </body>
-<script type="text/javascript">
-	function deleteArticleFunction(delUrl) {
-		if (confirm("Voulez-vous supprimer l'article sélectionné ?")) {
-			document.location = delUrl;
-		}
-	}
-</script>
 <script src="${request.contextPath }resources/js/jquery.js"></script>
 <script src="${request.contextPath }resources/js/jquery-ui.min.js"></script>
 <script src="${request.contextPath }resources/js/bootstrap.min.js"></script>

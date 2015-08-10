@@ -66,7 +66,7 @@ public class ClientServlet extends HttpServlet {
       		   messageErrors.add("Votre adresse mail n'est pas correcte");
          if(password==null)
       	   messageErrors.add("Indiquez votre mot de passe");
-         if(password.equals(passwordConf))
+         if(!password.equals(passwordConf))
       	   messageErrors.add("Indiquez le même mot de passe");
          if(messageErrors.size()>0){
       	   request.setAttribute("messageErrors", messageErrors);
