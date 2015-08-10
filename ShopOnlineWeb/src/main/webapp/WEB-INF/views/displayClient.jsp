@@ -17,7 +17,7 @@ ${erreur } <br>
 		action="${pageContext.request.contextPath}/searchClientServlet.do">
 		<div class="form-group">
 			<input type="email" class="form-control"
-				placeholder="Search By Email">
+				placeholder="Search By Email" name="email">
 		</div>
 		<button type="submit" class="btn btn-default">
 			<span class="glyphicon glyphicon-search"></span>
