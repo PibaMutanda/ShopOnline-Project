@@ -34,7 +34,7 @@ public class SearchClientServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/vues/displayClient.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/displayClient.jsp").forward(request, response);
 	}
 
 	/**
@@ -50,12 +50,12 @@ public class SearchClientServlet extends HttpServlet {
 			messageErros.add("client non repertorié dans notre système");
 		if(messageErros.size()>0){
 			request.setAttribute("messageErrors", messageErros);
-			request.getRequestDispatcher("/WEB-INF/vues/displayClient.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/displayClient.jsp").forward(request, response);
 		}
 		else
 		{
 			request.setAttribute("client", client);
-			request.getRequestDispatcher("/WEB-INF/vues/displayClient.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/displayClient.jsp").forward(request, response);
 		}
 	}
 
