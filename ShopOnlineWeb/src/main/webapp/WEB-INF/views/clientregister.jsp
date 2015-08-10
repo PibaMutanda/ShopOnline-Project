@@ -31,20 +31,25 @@
 					placeholder="Prénom" name="prenom">
 			</div>
 		</div>
-			<div class="form-group">
-				<label class="sr-only" for="inputRue">Rue</label> <input
-					type="text" class="form-control" id="inputRue"
-					placeholder="Rue et Numéro" name="rue">
+		<div class="form-group">
+				<label for="inputRue" class="col-sm-2 control-label">Rue *</label>
+					<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputRue"
+					placeholder="Rue" name="rue">
+			</div>
 			</div>
 			<div class="form-group">
-				<label class="sr-only" for="inputLocalite">Localit&eacute; *</label>
+				<label for="inputLocalite" class="col-sm-2 control-label">Localit&eacute; *</label>
+				<div class="col-sm-10">
 				<input type="text" class="form-control" id="inputLocalite"
 					placeholder="Localité" name="localite">
 			</div>
+			</div>
 			<div class="form-group">
-				<label class="sr-only" for="inputCp">Code Postal *</label> <input
-					type="text" class="form-control" id="inputCp"
-					placeholder="Code Postal" name="cp">
+				<label for="inputCp" class="col-sm-2 control-label">Code Postal *</label> <div class="col-sm-10">
+				<input type="number" class="form-control" id="inputCp"
+					 name="cp">
+			</div>
 			</div>
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">Email

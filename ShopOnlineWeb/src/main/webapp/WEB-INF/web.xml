@@ -87,7 +87,7 @@
     </servlet-mapping>
     <servlet-mapping>
     	<servlet-name>SearchClientServlet</servlet-name>
-    	<url-pattern>/searchClientServlet</url-pattern>
+    	<url-pattern>/searchClientServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

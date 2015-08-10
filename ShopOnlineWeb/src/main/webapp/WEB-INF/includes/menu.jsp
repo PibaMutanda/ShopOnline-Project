@@ -18,7 +18,7 @@
 			href="${pageContext.request.contextPath}/displayListCateg.do">Modifier
 				ou Supprimer un article</a></li>
 	  <li role="presentation"><a
-			href="${pageContext.request.contextPath}/displayClient.jsp">Clients</a></li>		
+			href="${pageContext.request.contextPath}/searchClientServlet.do">Clients</a></li>		
 	</ul>
 </body>
 <script src="${request.contextPath }resources/js/jquery.js"></script>
