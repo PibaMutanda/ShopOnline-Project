@@ -19,6 +19,10 @@
 				id="exampleInputDenomination" value="${article.denomination }">
 		</div>
 		<div class="form-group">
+			<label for="inputQteTotale">Quantit&eacute; Totale</label> <input type="number" name="qteTotale"
+				class="form-control" id="inputQteTotale" value="${article.qteTotale }">
+		</div>
+		<div class="form-group">
 			<label for="inputPrix">Prix</label> <input type="number" name="prix"
 				class="form-control" id="inputPrix" value="${article.prix }">
 		</div>

@@ -14,6 +14,7 @@
 			<tr>
 				<th>Nom</th>
 				<th>Prix</th>
+				<th>Quantit&eacute; Totale</th>
 				<th>En Vente</th>
 				<th></th>
 			</tr>
@@ -21,6 +22,7 @@
 				<tr>
 					<td>${article.denomination }</td>
 					<td>${article.prix }</td>
+					<td>${article.qteTotale }</td>
 					<td><c:choose>
 							<c:when test="${article.enVente eq '0' }">Nom</c:when>
 							<c:when test="${article.enVente eq '1' }">Oui</c:when>

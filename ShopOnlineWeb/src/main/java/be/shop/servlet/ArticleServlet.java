@@ -53,10 +53,15 @@ public class ArticleServlet extends HttpServlet {
 		String article = request.getParameter("article");
 		String prixStr = request.getParameter("prix");
 		String enVente = request.getParameter("enVente");
+		String qteTotale = request.getParameter("qteTotale");
 		if(categ==null || categ.equals(""))
 			messageErros.add("Indiquez une catégorie");
 		if(article == null)
 			messageErros.add("Indiquez le nom de l'article");
+		if(prixStr == null)
+			messageErros.add("Indiquez le prix de l'article");
+		if(qteTotale==null)
+			messageErros.add("Indiquez la quantité totale disponible de l'article");
 	   if(messageErros.size()>0){
 		   request.setAttribute("messageErrors", messageErros);
 		   request.getRequestDispatcher("/WEB-INF/views/articleregister.jsp").forward(request, response);
@@ -68,6 +73,7 @@ public class ArticleServlet extends HttpServlet {
 		   article2.setDenomination(article);
 		   article2.setPrix(Double.parseDouble(prixStr));
 		   article2.setEnVente(enVente.charAt(0));
+		   article2.setQteTotale(Integer.parseInt(qteTotale));
 		   articleRepository.save(article2);
 		   request.setAttribute("messageSuccess", "ArticleRepositoryTest enregistré avec succèss");
 		   request.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(request, response);

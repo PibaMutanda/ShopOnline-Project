@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -25,12 +26,13 @@ public class Commande {
 	@GeneratedValue
 	private Long id;
 	
-	@OneToMany
+	@OneToMany(mappedBy="commande")
 	private List<Achat> achats = new ArrayList<Achat>();
-	@OneToMany
+	
+	@OneToMany(fetch=FetchType.EAGER)
 	private List<Article> articles = new ArrayList<Article>();
 
-	
+	private int quantite;
 
 	public List<Achat> getAchats() {
 		return achats;
@@ -51,6 +53,15 @@ public class Commande {
 
 	public void setArticles(List<Article> articles) {
 		this.articles = articles;
+	}
+
+	
+	public int getQuantite() {
+		return quantite;
+	}
+
+	public void setQuantite(int quantite) {
+		this.quantite = quantite;
 	}
 
 	public Long getId() {

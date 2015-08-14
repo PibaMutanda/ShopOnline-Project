@@ -45,11 +45,13 @@ public class UpdateServletArticle extends HttpServlet {
 		String idStr = request.getParameter("id");
 		String denomination = request.getParameter("denomination");
 		String prix = request.getParameter("prix");
+		String qteTotale  = request.getParameter("qteTotale");
 		String enVente = request.getParameter("enVente");
 		Article article = articleRepository.findById(Long.parseLong(idStr));
 		article.setDenomination(denomination); 
 		article.setPrix(Double.parseDouble(prix));
 		article.setEnVente(enVente.charAt(0));
+		article.setQteTotale(Integer.parseInt(qteTotale));
 		articleRepository.save(article);
 		response.sendRedirect(request.getContextPath()+"/displayListCateg.do");
 	}

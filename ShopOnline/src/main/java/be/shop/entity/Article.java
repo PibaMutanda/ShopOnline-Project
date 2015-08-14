@@ -23,6 +23,8 @@ public class Article {
 	private String denomination;
 	private Double prix;
 	private char enVente;
+	
+	private int qteTotale;
 
 	@ManyToOne
 	@JoinColumn
@@ -60,6 +62,14 @@ public class Article {
 
 	public void setCateg(Categorie categ) {
 		this.categ = categ;
+	}
+
+	public int getQteTotale() {
+		return qteTotale;
+	}
+
+	public void setQteTotale(int qteTotale) {
+		this.qteTotale = qteTotale;
 	}
 
 	public Long getId() {

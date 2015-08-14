@@ -71,6 +71,13 @@
     	<servlet-name>DeleteClientServlet</servlet-name>
     	<servlet-class>be.shop.servlet.DeleteClientServlet</servlet-class>
     </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>DisplayAchatClientServlet</display-name>
+    	<servlet-name>DisplayAchatClientServlet</servlet-name>
+    	<servlet-class>be.shop.servlet.DisplayAchatClientServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
     	<servlet-name>ClientServlet</servlet-name>
     	<url-pattern>/clientServletRegister.do</url-pattern>
@@ -110,6 +117,10 @@
     <servlet-mapping>
     	<servlet-name>DeleteClientServlet</servlet-name>
     	<url-pattern>/deleteClient.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>DisplayAchatClientServlet</servlet-name>
+    	<url-pattern>/showAchatClient.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

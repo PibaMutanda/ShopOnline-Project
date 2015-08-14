@@ -31,6 +31,11 @@ public class Achat {
 	@ManyToOne
 	@JoinColumn
 	private Client client;
+    
+	@ManyToOne
+	@JoinColumn
+	private Commande commande;
+
 
 	public Date getDateAchat() {
 		return dateAchat;
@@ -46,6 +51,14 @@ public class Achat {
 
 	public void setClient(Client client) {
 		this.client = client;
+	}
+
+	public Commande getCommande() {
+		return commande;
+	}
+
+	public void setCommande(Commande commande) {
+		this.commande = commande;
 	}
 
 	public Long getId() {

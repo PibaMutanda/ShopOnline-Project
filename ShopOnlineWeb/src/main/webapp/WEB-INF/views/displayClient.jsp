@@ -51,7 +51,11 @@ ${erreur } <br>
 					href="${pageContext.request.contextPath}/deleteClient.do?id=${client.id}"
 					onclick="return(confirm('Voulez-vous vraiment supprimer le client sélectionné ?'))"><span
 						class="glyphicon glyphicon-remove" title="Supprimer l'utilisateur"></span></a></td>
-			 <td><a href="${pageContext.request.contextPath}/showAchatClient.do?id=${client.id}"></a> </td>			
+				<td><a
+					href="${pageContext.request.contextPath}/showAchatClient.do?id=${client.id}"
+					title="Voir ses achats"><span
+						class="glyphicon glyphicon-eye-open  glyphicon glyphicon-shopping-cart"></span>
+				</a></td>
 			</tr>
 		</table>
 	</c:if>
@@ -86,9 +90,8 @@ ${erreur } <br>
 				name="indesiderable" id="inlineRadio3" value="true"> Oui
 			</label> <label class="radio-inline"> <input type="radio"
 				name="indesiderable" id="inlineRadio3" value="false"> Non
-			</label><br>
-			<br>
-			<input type="hidden" name="id" value="${clientModif.id }">
+			</label><br> <br> <input type="hidden" name="id"
+				value="${clientModif.id }">
 			<button type="submit" class="btn btn-primary">Modifier</button>
 		</form>
 	</c:if>

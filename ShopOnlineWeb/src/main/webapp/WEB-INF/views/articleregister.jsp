@@ -44,7 +44,14 @@
 			<label for="inputPrix" class="col-sm-2 control-label">Prix </label>
 			<div class="col-sm-10">
 				<input type="number" class="form-control" id="inputPrix"
-					placeholder="Prix" name="prix">
+					 name="prix">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputQteTotale" class="col-sm-2 control-label">Quantit&eacute; Totale</label>
+			<div class="col-sm-10">
+				<input type="number" class="form-control" id="inputQteTotale"
+					 name="qteTotale">
 			</div>
 		</div>
 		<div class="form-group">
