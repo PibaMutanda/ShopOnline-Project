@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import be.shop.entity.Categorie;
-import be.shop.service.CategorieServices;
+import be.shop.repository.CategorieRepository;
 
 /**
  * Servlet implementation class DisplayCategoriesServlet
@@ -19,7 +19,7 @@ public class DisplayCategoriesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	@EJB
-	private CategorieServices categorieServices;
+	private CategorieRepository categorieRepository;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -32,7 +32,7 @@ public class DisplayCategoriesServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Categorie> categories = categorieServices.findAll();
+		List<Categorie> categories = categorieRepository.findAll();
 		request.setAttribute("categories", categories);
 		request.getRequestDispatcher("/WEB-INF/views/displayShop.jsp").forward(request, response);
 	}

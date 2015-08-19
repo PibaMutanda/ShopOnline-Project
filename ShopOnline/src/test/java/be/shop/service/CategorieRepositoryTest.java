@@ -35,8 +35,8 @@ public class CategorieRepositoryTest {
 		categorieRepository.save(categorie2);    categorieRepository.save(categorie2);    categorieRepository.save(categorie);
 		expect(categorieRepository.findAll()).andReturn(categories).anyTimes();
 		replay(categorieRepository);
-		assertEquals(categorieServicesImpl.findAll(), categories);
-		assertEquals(3, categorieServicesImpl.findAll().size());
+		assertEquals(categorieRepository.findAll(), categories);
+		assertEquals(3, categorieRepository.findAll().size());
 				
 	}
 	
@@ -46,7 +46,7 @@ public class CategorieRepositoryTest {
 		categorieRepository.save(categorie);
 		expect(categorieRepository.findById(1l)).andReturn(categorie);
 		replay(categorieRepository);
-		assertEquals(categorie, categorieServicesImpl.findById(1l));
+		assertEquals(categorie, categorieRepository.findById(1l));
 	
 	}
 	

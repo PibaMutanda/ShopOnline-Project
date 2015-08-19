@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import be.shop.entity.Article;
 import be.shop.entity.Categorie;
+import be.shop.repository.CategorieRepository;
 import be.shop.service.ArticleServices;
-import be.shop.service.CategorieServices;
 
 /**
  * Servlet implementation class ListArticleServlet
@@ -24,7 +24,7 @@ public class ListArticleServlet extends HttpServlet {
 	private ArticleServices articleServices;
        
 	@EJB
-	CategorieServices categorieServices;
+	CategorieRepository categorieRepository;
     /**
      * @see HttpServlet#HttpServlet()
      *
@@ -38,7 +38,7 @@ public class ListArticleServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		   String idCateg = request.getParameter("id");
-		   Categorie categ = categorieServices.findById(Long.parseLong(idCateg));
+		   Categorie categ = categorieRepository.findById(Long.parseLong(idCateg));
 	       List<Article> articles = articleServices.findByCateg(categ);
 	       request.setAttribute("articles", articles);
 	       request.getRequestDispatcher("/WEB-INF/views/displayListArticles.jsp").forward(request, response);
