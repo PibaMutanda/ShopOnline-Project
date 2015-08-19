@@ -1,6 +1,8 @@
 package be.shop.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -32,10 +35,12 @@ public class Achat {
 	@JoinColumn
 	private Client client;
     
-	@ManyToOne
-	@JoinColumn
-	private Commande commande;
-
+	@OneToMany(mappedBy="achat")
+	private List<Commande> commandes = new ArrayList<Commande>();
+	
+    private double totalAchat;
+    
+    private int quantiteAchat;
 
 	public Date getDateAchat() {
 		return dateAchat;
@@ -52,13 +57,32 @@ public class Achat {
 	public void setClient(Client client) {
 		this.client = client;
 	}
-
-	public Commande getCommande() {
-		return commande;
+    
+	public List<Commande> getCommandes() {
+		return commandes;
 	}
 
-	public void setCommande(Commande commande) {
-		this.commande = commande;
+	public void setCommandes(List<Commande> commandes) {
+		this.commandes = commandes;
+	}
+
+	public void addCommande(Commande commande){
+		this.commandes.add(commande);
+	}
+	public double getTotalAchat() {
+		return totalAchat;
+	}
+
+	public void setTotalAchat(double totalAchat) {
+		this.totalAchat = totalAchat;
+	}
+    
+	public int getQuantiteAchat() {
+		return quantiteAchat;
+	}
+
+	public void setQuantiteAchat(int quantiteAchat) {
+		this.quantiteAchat = quantiteAchat;
 	}
 
 	public Long getId() {

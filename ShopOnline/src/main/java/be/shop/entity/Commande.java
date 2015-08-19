@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -26,25 +25,23 @@ public class Commande {
 	@GeneratedValue
 	private Long id;
 	
-	@OneToMany(mappedBy="commande")
-	private List<Achat> achats = new ArrayList<Achat>();
+	@ManyToOne
+	@JoinColumn
+	private Achat achat;
 	
-	@OneToMany(fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="commande")
 	private List<Article> articles = new ArrayList<Article>();
 
 	private int quantite;
-
-	public List<Achat> getAchats() {
-		return achats;
-	}
-
-	public void setAchats(List<Achat> achats) {
-		this.achats = achats;
-	}
-
 	
-	public void addAchat(Achat achat){
-		achats.add(achat);
+	private double totalCommande;
+	
+	public Achat getAchat() {
+		return achat;
+	}
+
+	public void setAchat(Achat achat) {
+		this.achat = achat;
 	}
 
 	public List<Article> getArticles() {
@@ -55,13 +52,24 @@ public class Commande {
 		this.articles = articles;
 	}
 
-	
+	public void addArticle(Article article){
+		this.articles.add(article);
+	}
 	public int getQuantite() {
 		return quantite;
 	}
 
 	public void setQuantite(int quantite) {
 		this.quantite = quantite;
+	}
+    
+	
+	public double getTotalCommande() {
+		return totalCommande;
+	}
+
+	public void setTotalCommande(double totalCommande) {
+		this.totalCommande = totalCommande;
 	}
 
 	public Long getId() {

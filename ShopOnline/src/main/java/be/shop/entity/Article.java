@@ -12,6 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Articles")
 @NamedQueries({
+	    @NamedQuery(name = "Article.findByCommande", query = "select a from Article a where a.commande=:commande"),
 		@NamedQuery(name = "Article.findByCateg", query = "select a from Article a where a.categ=:categ"),
 		@NamedQuery(name = "Article.findAll", query = "select a from Article a") })
 public class Article {
@@ -24,7 +25,15 @@ public class Article {
 	private Double prix;
 	private char enVente;
 	
+	@ManyToOne
+	@JoinColumn
+	private Commande commande;
+	
+	/*
+	 * Quantité totale en stock pour un article*/
 	private int qteTotale;
+	
+	
 
 	@ManyToOne
 	@JoinColumn
@@ -45,8 +54,6 @@ public class Article {
 	public void setPrix(Double prix) {
 		this.prix = prix;
 	}
-
-	
 
 	public char getEnVente() {
 		return enVente;
@@ -70,6 +77,14 @@ public class Article {
 
 	public void setQteTotale(int qteTotale) {
 		this.qteTotale = qteTotale;
+	}
+	
+	public Commande getCommande() {
+		return commande;
+	}
+
+	public void setCommande(Commande commande) {
+		this.commande = commande;
 	}
 
 	public Long getId() {

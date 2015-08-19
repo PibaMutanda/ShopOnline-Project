@@ -7,6 +7,7 @@ import javax.ejb.Stateless;
 
 import be.shop.entity.Article;
 import be.shop.entity.Categorie;
+import be.shop.entity.Commande;
 import be.shop.repository.ArticleRepository;
 import be.shop.service.ArticleServices;
 
@@ -25,6 +26,12 @@ public class ArticleServicesImpl implements ArticleServices {
 	@Override
 	public List<Article> findByCateg(Categorie categorie) {
 		return articleRepository.findByCateg(categorie);
+	}
+
+
+	@Override
+	public List<Article> findByCommande(Commande commande) {
+		return articleRepository.findByCommande(commande);
 	}
 
 }

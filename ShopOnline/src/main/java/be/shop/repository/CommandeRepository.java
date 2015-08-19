@@ -12,5 +12,5 @@ public interface CommandeRepository extends GenericRepository<Commande> {
 
 	List<Commande> findByAchat(Achat achat);
 
-	List<Commande> findByArticle(Long idArticle);
+	List<Commande> findByArticle(Long article);
 }

@@ -29,9 +29,9 @@ public class CommandeServicesImpl implements CommandeServices {
 	}
 
 	@Override
-	public List<Commande> findByArticle(Long idArticle) {
+	public List<Commande> findByArticle(Long article) {
 	
-		return commandeRepository.findByArticle(idArticle);
+		return commandeRepository.findByArticle(article);
 	}
 
 }

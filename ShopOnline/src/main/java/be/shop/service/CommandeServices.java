@@ -12,5 +12,5 @@ public interface CommandeServices {
 
 	List<Commande> findByAchat(Achat achat);
 	
-	List<Commande> findByArticle(Long idArticle);
+	List<Commande> findByArticle(Long article);
 }

@@ -26,6 +26,7 @@
 			<label for="inputPrix">Prix</label> <input type="number" name="prix"
 				class="form-control" id="inputPrix" value="${article.prix }">
 		</div>
+		Mettre en Vente
 		<div class="radio">
 			<label> <input type="radio" name="enVente"
 				id="optionsRadios1" value="0" checked> Nom

@@ -9,19 +9,52 @@
 <title></title>
 </head>
 <body>
-     <table class="table table-striped">
-     <tr><th>D&eacute;nomination</th><th>Prix</th><th>Date achat</th><th>Quantité</th><th>Total</th></tr>
-     <c:forEach items="${achats }" var="achat">
-     <tr>
-     <c:set  value="articles">${achat.commande.articles }</c:set>
-     <c:forEach items="${articles }" var="article">
-     <td>${article.denomination }</td><td>${article.prix }<c:set var="total" value="0.0"><c:out value="${total+article.prix }"></c:out> </c:set>  </td>
-     </c:forEach>
-     <td>${achat.dateAchat }</td><td>${achat.commande.quantite }</td>
-     <td>${total }</td></tr>
-     
-     </c:forEach>
-     </table>
+	<table class="table table-striped">
+		<tr>
+			<th>Date achats</th>
+			<th>Nombre d'articles achet&eacute;s</th>
+			<th>Totaux Achats</th>
+		</tr>
+		<c:forEach items="${achats }" var="achat">
+			<tr>
+				<td><a
+					href="${pageContext.request.contextPath}/detailCommandesClient.do?id=${achat.id}"
+					title="Voir montant  total">${achat.dateAchat }</a></td>
+				<td>${achat.quantiteAchat }</td>
+				<td>${achat.totalAchat }</td>
+			</tr>
+		</c:forEach>
+	</table>
+	<c:if test="${not empty commandes }">
+		<table class="table table-striped">
+			<tr>
+				<th>Montant Total</th>
+			</tr>
+			<c:forEach items="${commandes }" var="commande">
+				<tr>
+					<td><a
+						href="${pageContext.request.contextPath}/detailAchatsClient.do?id=${commande.id}">${commande.totalCommande }</a></td>
+				</tr>
+			</c:forEach>
+		</table>
+	</c:if>
+	<c:if test="${not empty articles }">
+		<table class="table table-hover">
+			<tr>
+			    
+				<th>Cat&eacute;gorie</th>
+				<th>Article</th>
+				<th>Prix</th>
+			</tr>
+			<c:forEach items="${articles }" var="article">
+				<tr>
+					<td>${article.categ.nom}</td>
+					<td>${article.denomination }</td>
+					<td>${article.prix}</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</c:if>
 </body>
 <script src="${request.contextPath }resources/js/jquery.js"></script>
 <script src="${request.contextPath }resources/js/jquery-ui.min.js"></script>

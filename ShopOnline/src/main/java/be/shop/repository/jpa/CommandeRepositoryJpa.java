@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 
 import be.shop.entity.Achat;
+import be.shop.entity.Article;
 import be.shop.entity.Commande;
 import be.shop.repository.CommandeRepository;
 
@@ -24,9 +25,9 @@ public class CommandeRepositoryJpa extends GenericRepositoryJpa<Commande>
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Commande> findByArticle(Long idArticle) {
+	public List<Commande> findByArticle(Long article) {
 		return getEntityManager().createNamedQuery("Commande.findByArticle")
-				.setParameter("id", idArticle).getResultList();
+				.setParameter("article", article).getResultList();
 	}
 
 }

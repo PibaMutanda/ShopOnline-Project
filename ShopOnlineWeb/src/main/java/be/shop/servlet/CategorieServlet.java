@@ -39,7 +39,8 @@ public class CategorieServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/categorieregister.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/categorieregister.jsp")
+				.forward(request, response);
 	}
 
 	/**
@@ -60,16 +61,17 @@ public class CategorieServlet extends HttpServlet {
 		}
 		if (messageErrors.size() > 0) {
 			request.setAttribute("messageErrors", messageErrors);
-			getServletContext().getRequestDispatcher("/WEB-INF/views/categorieregister.jsp")
-					.forward(request, response);
+			getServletContext().getRequestDispatcher(
+					"/WEB-INF/views/categorieregister.jsp").forward(request,
+					response);
 		} else {
 			categorie = new Categorie();
 			categorie.setNom(categ);
 			categorieRepository.save(categorie);
 			request.setAttribute("messageSuccess",
 					"Catégorie enregistrée avec succès");
-			getServletContext().getRequestDispatcher("/WEB-INF/views/home.jsp").forward(
-					request, response);
+			getServletContext().getRequestDispatcher("/WEB-INF/views/home.jsp")
+					.forward(request, response);
 		}
 	}
 

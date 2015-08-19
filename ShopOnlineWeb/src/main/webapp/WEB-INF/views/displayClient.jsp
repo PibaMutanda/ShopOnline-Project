@@ -86,6 +86,9 @@ ${erreur } <br>
 				<input type="text" class="form-control" name="localite"
 					value="${clientModif.localite }">
 			</div>
+			<div>
+			Bloquer
+			</div>
 			<label class="radio-inline"> <input type="radio"
 				name="indesiderable" id="inlineRadio3" value="true"> Oui
 			</label> <label class="radio-inline"> <input type="radio"

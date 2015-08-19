@@ -78,6 +78,48 @@
     	<servlet-name>DisplayAchatClientServlet</servlet-name>
     	<servlet-class>be.shop.servlet.DisplayAchatClientServlet</servlet-class>
     </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>HomeServlet</display-name>
+    	<servlet-name>HomeServlet</servlet-name>
+    	<servlet-class>be.shop.servlet.HomeServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>DisplayCategoriesServlet</display-name>
+    	<servlet-name>DisplayCategoriesServlet</servlet-name>
+    	<servlet-class>be.shop.servlet.DisplayCategoriesServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>DisplayShopArticleServlet</display-name>
+    	<servlet-name>DisplayShopArticleServlet</servlet-name>
+    	<servlet-class>be.shop.servlet.DisplayShopArticleServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>CommandeServlet</display-name>
+    	<servlet-name>CommandeServlet</servlet-name>
+    	<servlet-class>be.shop.servlet.CommandeServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>DetailCommandeClientServlet</display-name>
+    	<servlet-name>DetailCommandeClientServlet</servlet-name>
+    	<servlet-class>be.shop.servlet.DetailCommandeClientServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>DetailAchatsClientServlet</display-name>
+    	<servlet-name>DetailAchatsClientServlet</servlet-name>
+    	<servlet-class>be.shop.servlet.DetailAchatsClientServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
     	<servlet-name>ClientServlet</servlet-name>
     	<url-pattern>/clientServletRegister.do</url-pattern>
@@ -121,6 +163,30 @@
     <servlet-mapping>
     	<servlet-name>DisplayAchatClientServlet</servlet-name>
     	<url-pattern>/showAchatClient.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>HomeServlet</servlet-name>
+    	<url-pattern>/home.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>DisplayCategoriesServlet</servlet-name>
+    	<url-pattern>/showCategories.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>DisplayShopArticleServlet</servlet-name>
+    	<url-pattern>/displayShopArticle.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>CommandeServlet</servlet-name>
+    	<url-pattern>/commandeArticle.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>DetailCommandeClientServlet</servlet-name>
+    	<url-pattern>/detailCommandesClient.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>DetailAchatsClientServlet</servlet-name>
+    	<url-pattern>/detailAchatsClient.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

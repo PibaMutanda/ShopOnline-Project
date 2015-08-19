@@ -17,6 +17,7 @@
 				<th>Quantit&eacute; Totale</th>
 				<th>En Vente</th>
 				<th></th>
+				<th></th>
 			</tr>
 			<c:forEach items="${articles }" var="article">
 				<tr>

@@ -9,10 +9,13 @@
 <title></title>
 </head>
 <body>
-      <h4>Choisir la catégorie de l'article</h4> 
-       <c:forEach items="${listCateg }" var="categ">
-       <a href="displayListArticle.do?id=${categ.id }">${categ.nom }</a>
-       </c:forEach>
+	<h3>Choisir la catégorie de l'article</h3>
+	<ul class="nav nav-pills nav-stacked">
+		<c:forEach items="${listCateg }" var="categ">
+			<li role="presentation"><a class="navbar-brand"
+				href="displayListArticle.do?id=${categ.id }">${categ.nom }</a></li>
+		</c:forEach>
+	</ul>
 </body>
 <script src="${request.contextPath }resources/js/jquery.js"></script>
 <script src="${request.contextPath }resources/js/jquery-ui.min.js"></script>
