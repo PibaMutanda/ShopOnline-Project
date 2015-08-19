@@ -10,13 +10,14 @@
 </head>
 <body>
 	<h3>Choisir la catégorie de l'article</h3>
-
+    <c:if test="${not empty categories }">
 	<ul class="nav nav-pills nav-stacked">
 		<c:forEach items="${categories }" var="categ">
 			<li role="presentation"><a
 				href="displayShopArticle.do?id=${categ.id }">${categ.nom }</a></li>
 		</c:forEach>
 	</ul>
+	</c:if>
 	<c:forEach items="${messageErrors }" var="erreur">
 	${erreur } <br>
 	</c:forEach>

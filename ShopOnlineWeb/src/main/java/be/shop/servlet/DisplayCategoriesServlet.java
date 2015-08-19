@@ -37,11 +37,4 @@ public class DisplayCategoriesServlet extends HttpServlet {
 		request.getRequestDispatcher("/WEB-INF/views/displayShop.jsp").forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
-
 }
