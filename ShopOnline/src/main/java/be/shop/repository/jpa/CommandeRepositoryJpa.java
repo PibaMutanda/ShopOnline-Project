@@ -5,7 +5,6 @@ import java.util.List;
 import javax.ejb.Stateless;
 
 import be.shop.entity.Achat;
-import be.shop.entity.Article;
 import be.shop.entity.Commande;
 import be.shop.repository.CommandeRepository;
 
@@ -20,7 +19,7 @@ public class CommandeRepositoryJpa extends GenericRepositoryJpa<Commande>
 	@Override
 	public List<Commande> findByAchat(Achat achat) {
 		return getEntityManager().createNamedQuery("Commande.findByAchat")
-				.setParameter("achat", achat.getId()).getResultList();
+				.setParameter("achat", achat).getResultList();
 	}
 
 	@SuppressWarnings("unchecked")

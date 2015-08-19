@@ -18,7 +18,7 @@ import javax.persistence.Table;
 @NamedQueries({
 		@NamedQuery(name = "Commande.findAll", query = "select c from Commande c"),
 		@NamedQuery(name = "Commande.findByArticle", query = "select c from Commande c join c.articles a where a.id=:id"),
-		@NamedQuery(name = "Commande.findByAchat", query = "select c from Commande c join c.achats ca where ca.id =:achat") })
+		@NamedQuery(name = "Commande.findByAchat", query = "select c from Commande c where c.achat=:achat") })
 public class Commande {
 
 	@Id

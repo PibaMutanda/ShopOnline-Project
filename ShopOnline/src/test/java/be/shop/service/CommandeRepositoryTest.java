@@ -25,16 +25,7 @@ public class CommandeRepositoryTest {
 		commandeServicesImpl.setCommandeRepository(commandeRepository);
 	}
 
-	@Test
-	@Ignore
-	public void testFindByAchat() {
-		Achat achatOrdi = new Achat();
-		Achat achatCasque = new Achat();
-		Achat achaMontre = new Achat();
-		Commande commande = new Commande();
-		commande.addAchat(achatCasque);
-		
-	}
+	
 
 	@Test
 	@Ignore
