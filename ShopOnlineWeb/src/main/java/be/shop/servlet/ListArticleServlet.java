@@ -31,7 +31,6 @@ public class ListArticleServlet extends HttpServlet {
      */
     public ListArticleServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**

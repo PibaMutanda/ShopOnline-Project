@@ -26,7 +26,6 @@ public class DisplayCategoriesServlet extends HttpServlet {
      */
     public DisplayCategoriesServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**

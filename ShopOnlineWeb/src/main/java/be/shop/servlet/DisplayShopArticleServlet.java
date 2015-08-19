@@ -31,7 +31,6 @@ public class DisplayShopArticleServlet extends HttpServlet {
      */
     public DisplayShopArticleServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**

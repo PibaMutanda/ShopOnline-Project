@@ -31,7 +31,6 @@ public class DisplayAchatClientServlet extends HttpServlet {
      */
     public DisplayAchatClientServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**

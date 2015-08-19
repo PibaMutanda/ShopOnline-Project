@@ -25,7 +25,6 @@ public class UpdateServletArticle extends HttpServlet {
      */
     public UpdateServletArticle() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**

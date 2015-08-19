@@ -3,6 +3,7 @@ package be.shop.servlet;
 import java.io.IOException;
 import java.util.List;
 
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,8 +20,10 @@ import be.shop.service.CommandeServices;
 public class DetailCommandeClientServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	@EJB
 	private CommandeServices commandeServices;
 
+	@EJB
 	private AchatRepository achatRepository;
 
 	/**

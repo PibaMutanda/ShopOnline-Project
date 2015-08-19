@@ -25,7 +25,6 @@ public class DeleteServletArticle extends HttpServlet {
      */
     public DeleteServletArticle() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**

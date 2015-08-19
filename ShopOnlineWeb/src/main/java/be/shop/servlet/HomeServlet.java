@@ -17,7 +17,6 @@ public class HomeServlet extends HttpServlet {
      */
     public HomeServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
