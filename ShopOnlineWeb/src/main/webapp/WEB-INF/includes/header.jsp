@@ -22,11 +22,11 @@
 				<ul class="nav navbar-nav navbar-right">
 				  <c:choose>
 				    <c:when test="${empty sessionIdClient }">
-					<li><a href="${pageContext.request.contextPath}/login.do"><span class="glyphicon glyphicon-log-in"></span></a></li>
+					<li><a href="${pageContext.request.contextPath}/login.do" class="glyphicon glyphicon-log-in"></a></li>
 					</c:when>
 					<c:otherwise>
 					<li>${identity }</li>
-					<li><a href="${pageContext.request.contextPath}/logout.do"><span class="glyphicon glyphicon-log-out"></span></a></li>
+					<li><a href="${pageContext.request.contextPath}/logout.do" class="glyphicon glyphicon-log-out"></a></li>
 					</c:otherwise>
 				  </c:choose>	
 				</ul>

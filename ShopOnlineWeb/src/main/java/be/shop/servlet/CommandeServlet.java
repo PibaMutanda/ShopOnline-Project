@@ -50,7 +50,7 @@ public class CommandeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<String> messageErrors = new ArrayList<String>();
-		String sessionIdClient = null;
+		Long sessionIdClient = null;
 		Client client = null;
 		int cpt=0;
 		int qteAchat = 0;
@@ -61,11 +61,11 @@ public class CommandeServlet extends HttpServlet {
 		Double totalArticleTab[] = new Double[idTab.length];
 		
 		// On recupère la session du client
-				sessionIdClient = (String) request.getSession().getAttribute("sessionIdClient");
+				sessionIdClient = (Long) request.getSession().getAttribute("sessionIdClient");
 				if(sessionIdClient==null)
-					messageErrors.add("Vous n'êtes pas autorisé à effectuer les achats inscrivez vous <a href='${pageContext.request.contextPath}/clientServletRegister.do'>ici </a>avant");
+					messageErrors.add("Inscrivez-vous sur le site avant de pouvoir effectuer les achats");
 				else
-					client = clientRepository.findById(Long.parseLong(sessionIdClient));
+					client = clientRepository.findById(sessionIdClient);
 				if(client==null)
 					messageErrors.add("Achat non autorisé!! Veuillez contacter nos service");
 		for (String idStr : idTab) {
