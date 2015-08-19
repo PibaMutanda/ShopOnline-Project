@@ -16,6 +16,8 @@
 					<li><a
 						href="${pageContext.request.contextPath}/showCategories.do">Boutique</a></li>
 				</ul>
+			</div>
+			
 				<div class="collapse navbar-collapse navHeaderCollapse">
 				<ul class="nav navbar-nav navbar-right">
 				  <c:choose>
@@ -23,12 +25,13 @@
 					<li><a href="${pageContext.request.contextPath}/login.do"><span class="glyphicon glyphicon-log-in"></span></a></li>
 					</c:when>
 					<c:otherwise>
-					<li>${identity }&nbsp;&nbsp; <a href="${pageContext.request.contextPath}/logout.do"><span class="glyphicon glyphicon-log-out"></span></a></li>
+					<li>${identity }</li>
+					<li><a href="${pageContext.request.contextPath}/logout.do"><span class="glyphicon glyphicon-log-out"></span></a></li>
 					</c:otherwise>
 				  </c:choose>	
 				</ul>
 				</div>
-			</div>
+			
 		</div>
 	</nav>
 	<br><br>

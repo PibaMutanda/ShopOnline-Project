@@ -61,7 +61,7 @@ public class CommandeServlet extends HttpServlet {
 		Double totalArticleTab[] = new Double[idTab.length];
 		
 		// On recupère la session du client
-				sessionIdClient = (String) request.getSession().getAttribute("id");
+				sessionIdClient = (String) request.getSession().getAttribute("sessionIdClient");
 				if(sessionIdClient==null)
 					messageErrors.add("Vous n'êtes pas autorisé à effectuer les achats inscrivez vous <a href='${pageContext.request.contextPath}/clientServletRegister.do'>ici </a>avant");
 				else
