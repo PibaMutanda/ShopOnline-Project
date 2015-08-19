@@ -52,7 +52,7 @@ public class CategorieServlet extends HttpServlet {
 		List<String> messageErrors = new ArrayList<String>();
 		Categorie categorie = null;
 		String categ = request.getParameter("categ");
-		if (categ == null)
+		if (categ == null || categ.equals(""))
 			messageErrors.add("Indiquez la catégorie");
 		categorie = categorieServices.findByName(categ);
 		if (categorie != null) {

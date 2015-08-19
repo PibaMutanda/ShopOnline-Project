@@ -50,21 +50,23 @@ public class ClientServlet extends HttpServlet {
          String email=request.getParameter("email").trim();
          String password=request.getParameter("password").trim();
          String passwordConf = request.getParameter("passwordConf").trim();
-         if(nom==null)
+         if(nom==null||nom.equals(""))
       	   messageErrors.add("Renseignez le nom");
-         if(rue==null)
+         if(prenom==null||prenom.equals(""))
+        	 messageErrors.add("Saisir le prénom");
+         if(rue==null || rue.equals(""))
       	   messageErrors.add("Indiquez la rue");
-         if(cp==null)
+         if(cp==null || cp.equals(""))
       	   messageErrors.add("Indiquez le code postal");
          if(!cp.matches("^[0-9]{4}$"))
       	   messageErrors.add("Code Postal non valide");
-         if(localite==null)
+         if(localite==null || localite.equals(""))
       	   messageErrors.add("Indiquez la localité");
-         if(email==null)
+         if(email==null || email.equals(""))
       	   messageErrors.add("Indiquez l'adresse mail");
          if(!email.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$"))
       		   messageErrors.add("Votre adresse mail n'est pas correcte");
-         if(password==null)
+         if(password==null || password.equals(""))
       	   messageErrors.add("Indiquez votre mot de passe");
          if(!password.equals(passwordConf))
       	   messageErrors.add("Indiquez le même mot de passe");

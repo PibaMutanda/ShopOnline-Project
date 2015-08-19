@@ -1,3 +1,4 @@
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,9 +16,18 @@
 					<li><a
 						href="${pageContext.request.contextPath}/showCategories.do">Boutique</a></li>
 				</ul>
+				<div class="collapse navbar-collapse navHeaderCollapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a>Connexion</a></li>
+				  <c:choose>
+				    <c:when test="${empty sessionIdClient }">
+					<li><a href="${pageContext.request.contextPath}/login.do"><span class="glyphicon glyphicon-log-in"></span></a></li>
+					</c:when>
+					<c:otherwise>
+					<li>${identity }&nbsp;&nbsp; <a href="${pageContext.request.contextPath}/logout.do"><span class="glyphicon glyphicon-log-out"></span></a></li>
+					</c:otherwise>
+				  </c:choose>	
 				</ul>
+				</div>
 			</div>
 		</div>
 	</nav>

@@ -56,11 +56,11 @@ public class ArticleServlet extends HttpServlet {
 		String qteTotale = request.getParameter("qteTotale");
 		if(categ==null || categ.equals(""))
 			messageErros.add("Indiquez une catégorie");
-		if(article == null)
+		if(article == null || article.equals(""))
 			messageErros.add("Indiquez le nom de l'article");
-		if(prixStr == null)
+		if(prixStr == null || prixStr.equals(""))
 			messageErros.add("Indiquez le prix de l'article");
-		if(qteTotale==null)
+		if(qteTotale==null || qteTotale.equals(""))
 			messageErros.add("Indiquez la quantité totale disponible de l'article");
 	   if(messageErros.size()>0){
 		   request.setAttribute("messageErrors", messageErros);
