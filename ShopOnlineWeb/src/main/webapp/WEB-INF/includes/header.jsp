@@ -21,6 +21,7 @@
 			</div>
 		</div>
 	</nav>
+	<br><br>
 </body>
 <script src="${request.contextPath }resources/js/jquery.js"></script>
 <script src="${request.contextPath }resources/js/jquery-ui.min.js"></script>
