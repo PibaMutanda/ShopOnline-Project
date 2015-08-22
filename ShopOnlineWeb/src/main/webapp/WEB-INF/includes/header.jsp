@@ -17,24 +17,30 @@
 						href="${pageContext.request.contextPath}/showCategories.do">Boutique</a></li>
 				</ul>
 			</div>
-			
-				<div class="collapse navbar-collapse navHeaderCollapse">
+
+			<div class="collapse navbar-collapse navHeaderCollapse">
 				<ul class="nav navbar-nav navbar-right">
-				  <c:choose>
-				    <c:when test="${empty sessionIdClient }">
-					<li><a href="${pageContext.request.contextPath}/login.do" class="glyphicon glyphicon-log-in"></a></li>
-					</c:when>
-					<c:otherwise>
-					<li>${identity }</li>
-					<li><a href="${pageContext.request.contextPath}/logout.do" class="glyphicon glyphicon-log-out"></a></li>
-					</c:otherwise>
-				  </c:choose>	
+					<c:choose>
+						<c:when test="${empty sessionIdClient }">
+							<li><a href="${pageContext.request.contextPath}/login.do"
+								class="glyphicon glyphicon-log-in"></a></li>
+						</c:when>
+						<c:otherwise>
+							<li><img src="${client.image }" alt="" class="img-circle"></li>
+							<li>${client.prenom }</li>
+							<li><a href="${pageContext.request.contextPath}/logout.do"
+								class="glyphicon glyphicon-log-out"></a></li>
+						</c:otherwise>
+					</c:choose>
 				</ul>
-				</div>
-			
+			</div>
+
 		</div>
 	</nav>
-	<br><br>
+	<br>
+	<br>
+	<br>
+	<br>
 </body>
 <script src="${request.contextPath }resources/js/jquery.js"></script>
 <script src="${request.contextPath }resources/js/jquery-ui.min.js"></script>

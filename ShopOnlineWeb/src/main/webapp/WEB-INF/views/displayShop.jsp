@@ -10,19 +10,20 @@
 </head>
 <body>
 	<h3>Choisir la catégorie de l'article</h3>
-    <c:if test="${not empty categories }">
-	<ul class="nav nav-pills nav-stacked">
-		<c:forEach items="${categories }" var="categ">
-			<li role="presentation"><a
-				href="displayShopArticle.do?id=${categ.id }">${categ.nom }</a></li>
-		</c:forEach>
-	</ul>
+	<c:if test="${not empty categories }">
+		<ul class="nav nav-pills nav-stacked">
+			<c:forEach items="${categories }" var="categ">
+				<li role="presentation"><a
+					href="displayShopArticle.do?id=${categ.id }">${categ.nom }</a></li>
+			</c:forEach>
+		</ul>
 	</c:if>
 	<c:forEach items="${messageErrors }" var="erreur">
 	${erreur } <br>
 	</c:forEach>
+	${message }
 	<c:if test="${not empty articles }">
-		<form action="${pageContext.request.contextPath}/commandeArticle.do">
+		<form action="${pageContext.request.contextPath}/commandeArticle.do" method="post">
 			<table class="table table-striped">
 				<tr>
 					<th>Quantit&eacute;s</th>
@@ -30,21 +31,23 @@
 					<th>Prix Unit</th>
 				</tr>
 				<c:forEach items="${articles }" var="article">
-					<tr>
-						<td><select name="quantite"><option value="0"
-									selected="selected">0</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option></select></td>
-						<td>${article.denomination }</td>
-						<td>${article.prix }</td>
-						<td><input type="hidden" name="id" value="${article.id }">
-						</td>
-					</tr>
+					<c:if test="${article.enVente eq '1' }">
+						<tr>
+							<td><select name="quantite"><option value="0"
+										selected="selected">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option></select></td>
+							<td>${article.denomination }</td>
+							<td>${article.prix }</td>
+							<td><input type="hidden" name="id" value="${article.id }">
+							</td>
+						</tr>
+					</c:if>
 				</c:forEach>
 				<c:if test="${not empty sessionIdClient }">
 					<tr>

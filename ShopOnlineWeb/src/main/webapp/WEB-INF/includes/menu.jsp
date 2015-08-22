@@ -19,6 +19,7 @@
 				ou Supprimer un article</a></li>
 	  <li role="presentation"><a
 			href="${pageContext.request.contextPath}/searchClientServlet.do">Clients</a></li>		
+	 <li><a href="${pageContext.request.contextPath}/commandeEnAttente.do">Liste des commandes en attentes</a></li>		
 	</ul>
 </body>
 <script src="${request.contextPath }resources/js/jquery.js"></script>

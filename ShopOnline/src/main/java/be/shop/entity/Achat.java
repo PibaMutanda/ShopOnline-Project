@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -24,7 +25,7 @@ import javax.persistence.TemporalType;
 		@NamedQuery(name = "Achat.findByClient", query = "select a from Achat a where a.client=:client") })
 public class Achat {
 
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Id
 	private Long id;
 

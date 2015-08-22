@@ -9,6 +9,10 @@
 <title></title>
 </head>
 <body>
+ <c:forEach items="${messageErrors }" var="erreur">
+ ${erreur }<br>
+ </c:forEach>
+<c:if test="${not empty achats }">
 	<table class="table table-striped">
 		<tr>
 			<th>Date achats</th>
@@ -25,6 +29,7 @@
 			</tr>
 		</c:forEach>
 	</table>
+</c:if>	
 	<c:if test="${not empty commandes }">
 		<table class="table table-striped">
 			<tr>

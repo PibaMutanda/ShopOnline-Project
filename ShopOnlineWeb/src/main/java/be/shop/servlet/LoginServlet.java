@@ -61,9 +61,8 @@ public class LoginServlet extends HttpServlet {
 				else
 				{
 					HttpSession session = request.getSession();
-					String identity = client.getPrenom()+"  "+client.getNom();
 					session.setAttribute("sessionIdClient", client.getId());
-					session.setAttribute("identity", identity);
+					session.setAttribute("client", client);
 				    request.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(request, response);
 				}
 			}

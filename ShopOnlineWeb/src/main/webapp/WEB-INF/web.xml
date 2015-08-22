@@ -134,6 +134,20 @@
     	<servlet-name>LogoutServlet</servlet-name>
     	<servlet-class>be.shop.servlet.LogoutServlet</servlet-class>
     </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>ConfirmAchatServlet</display-name>
+    	<servlet-name>ConfirmAchatServlet</servlet-name>
+    	<servlet-class>be.shop.servlet.ConfirmAchatServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>CommandeEnAttenteServlet</display-name>
+    	<servlet-name>CommandeEnAttenteServlet</servlet-name>
+    	<servlet-class>be.shop.servlet.CommandeEnAttenteServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
     	<servlet-name>ClientServlet</servlet-name>
     	<url-pattern>/clientServletRegister.do</url-pattern>
@@ -209,6 +223,14 @@
     <servlet-mapping>
     	<servlet-name>LogoutServlet</servlet-name>
     	<url-pattern>/logout.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>ConfirmAchatServlet</servlet-name>
+    	<url-pattern>/confirmAchat.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>CommandeEnAttenteServlet</servlet-name>
+    	<url-pattern>/commandeEnAttente.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

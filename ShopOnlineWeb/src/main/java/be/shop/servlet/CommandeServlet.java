@@ -10,12 +10,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import be.shop.entity.Achat;
 import be.shop.entity.Article;
 import be.shop.entity.Client;
 import be.shop.entity.Commande;
-import be.shop.repository.AchatRepository;
 import be.shop.repository.ArticleRepository;
 import be.shop.repository.ClientRepository;
 import be.shop.repository.CommandeRepository;
@@ -29,8 +26,7 @@ public class CommandeServlet extends HttpServlet {
 	@EJB
 	private CommandeRepository commandeRepository;
 	
-	@EJB
-	private AchatRepository achatRepository;
+	
 	
 	@EJB
 	private ArticleRepository articleRepository;
@@ -50,15 +46,13 @@ public class CommandeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<String> messageErrors = new ArrayList<String>();
+		List<Article> articles = new ArrayList<Article>();
 		Long sessionIdClient = null;
 		Client client = null;
 		int cpt=0;
-		int qteAchat = 0;
-		Achat achat=new Achat();
-		double totalAchatJour=0.0;
 		String quantiteStrTab[] = request.getParameterValues("quantite");
 		String idTab[]= request.getParameterValues("id");
-		Double totalArticleTab[] = new Double[idTab.length];
+		
 		
 		// On recupère la session du client
 				sessionIdClient = (Long) request.getSession().getAttribute("sessionIdClient");
@@ -68,6 +62,9 @@ public class CommandeServlet extends HttpServlet {
 					client = clientRepository.findById(sessionIdClient);
 				if(client==null)
 					messageErrors.add("Achat non autorisé!! Veuillez contacter nos service");
+				if(idTab == null || quantiteStrTab == null)
+					messageErrors.add("Votre shop est en r&eacute;approvisionnement");
+				else	{	
 		for (String idStr : idTab) {
 			Article article = articleRepository.findById(Long.parseLong(idStr));
 			int quantite = Integer.parseInt(quantiteStrTab[cpt]);
@@ -84,29 +81,24 @@ public class CommandeServlet extends HttpServlet {
 		         commande.addArticle(article);
 		         commande.setQuantite(quantite);
 		         commande.setTotalCommande(totalArticle);
-		         achat.addCommande(commande);
+		         commande.setClient(client);
+		         commande.setDateCommande(new Date());
 		         articleRepository.save(article);
 		         commandeRepository.save(commande);
-		         qteAchat+=quantite;
-		    	 totalArticleTab[cpt]=totalArticle;
+		    	 articles.add(article);
 		    	cpt++;
 			}
 		}
+				}
 		
-		for (Double double1 : totalArticleTab) {
-			totalAchatJour+=double1;
-		}
 		if(messageErrors.size()>0){
 			request.setAttribute("messageErrors", messageErrors);
 			request.getRequestDispatcher("/WEB-INF/views/displayShop.jsp").forward(request, response);
 		}
 		else{
-			  achat.setClient(client);
-			  achat.setTotalAchat(totalAchatJour);
-			  achat.setDateAchat(new Date());
-			  achat.setQuantiteAchat(qteAchat);
-			  achatRepository.save(achat);
-			  request.getRequestDispatcher("WEB-INF/views/displayShop.jsp").forward(request, response);
+			  request.setAttribute("articles", articles);
+			  request.setAttribute("commandes", commandeRepository.findByClientAndDate(client, new Date()));
+		  request.getRequestDispatcher("WEB-INF/views/confirmAchat.jsp").forward(request, response);
 		}
 	}
 
