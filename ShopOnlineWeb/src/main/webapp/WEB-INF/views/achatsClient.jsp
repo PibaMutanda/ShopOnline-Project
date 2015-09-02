@@ -30,19 +30,6 @@
 		</c:forEach>
 	</table>
 </c:if>	
-	<c:if test="${not empty commandes }">
-		<table class="table table-striped">
-			<tr>
-				<th>Montant Total</th>
-			</tr>
-			<c:forEach items="${commandes }" var="commande">
-				<tr>
-					<td><a
-						href="${pageContext.request.contextPath}/detailAchatsClient.do?id=${commande.id}">${commande.totalCommande }</a></td>
-				</tr>
-			</c:forEach>
-		</table>
-	</c:if>
 	<c:if test="${not empty articles }">
 		<table class="table table-hover">
 			<tr>

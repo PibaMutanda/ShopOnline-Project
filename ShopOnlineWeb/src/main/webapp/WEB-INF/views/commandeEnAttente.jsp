@@ -17,18 +17,23 @@
 			<th>Date Commande</th>
 			<th>Nombre article</th>
 			<th>Prix total</th>
+			<th></th>
 		</tr>
 		<c:forEach items="${commandes }" var="commande">
 			<c:if test="${empty commande.achat }"></c:if>
 			<tr>
 				<td>${commande.client.nom }</td>
-				<td>${commande.prenom }</td>
-				<td>${commande.email }</td>
+				<td>${commande.client.prenom }</td>
+				<td>${commande.client.email }</td>
 				<td>${commande.dateCommande }</td>
 				<td>${commande.quantite }</td>
 				<td>${commande.totalCommande }</td>
-			</tr> 
-     </c:forEach>
+				<td><a
+					href="${pageContext.request.contextPath}/deleteCommandeClient.do?id=${commande.id}"
+					onclick="return(confirm('Voulez-vous vraiment supprimer la commande sélectionné ?'))"><span
+						class="glyphicon glyphicon-remove"></span></a></td>
+			</tr>
+		</c:forEach>
 	</table>
 </body>
 <script src="${request.contextPath }resources/js/jquery.js"></script>

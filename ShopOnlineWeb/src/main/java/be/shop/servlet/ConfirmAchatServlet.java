@@ -57,7 +57,6 @@ public class ConfirmAchatServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		List<String> messageErrors = new ArrayList<String>();
 		String message = null;
-		Achat achat = null;
 		Long sessionIdClient = null;
 		String idStrTab[] = request.getParameterValues("id");
 		String prixTotalTab[] = request.getParameterValues("total");
@@ -79,12 +78,10 @@ public class ConfirmAchatServlet extends HttpServlet {
 		if (idStrTab == null || prixTotalTab == null || qteAchatTab == null) {
 			messageErrors
 					.add("Sorry ! vous ne pouvez pas effectu&eacute; ces achats, par contre nous conservons votre commande pendant deux jour <br> Veuillez contacter nos services");
-			request.setAttribute("messageErrors", messageErrors);
-			request.getRequestDispatcher("/WEB-INF/views/achatsClient.jsp")
-					.forward(request, response);
+
 		} else {
-			achat = new Achat();
-			message = "Votre achat est enregistr&eacute; avec succe&egrave;";
+			 Achat achat = new Achat();
+			message = "Votre commande est enregistr&eacute; avec succe&egrave;";
 			request.setAttribute("message", message);
 			for (String idStr : idStrTab) {
 				Commande commande = commandeRepository.findById(Long
@@ -97,14 +94,27 @@ public class ConfirmAchatServlet extends HttpServlet {
 			for (String prix : prixTotalTab) {
 				prixTotal += Double.parseDouble(prix);
 			}
-			achat.setClient(client);
-			achat.setDateAchat(new Date());
-			achat.setQuantiteAchat(totalQte);
-			achat.setTotalAchat(prixTotal);
-			achatRepository.save(achat);
-			request.setAttribute("message", message);
-			request.getRequestDispatcher("WEB-INF/views/displayShop.jsp")
-					.forward(request, response);
+			if (totalQte <= 0)
+				messageErrors.add("Aucun achat r&eacute;alis&eacute;");
+			if (messageErrors.size() > 0) {
+				request.setAttribute("messageErrors", messageErrors);
+				request.getRequestDispatcher("/WEB-INF/views/achatsClient.jsp")
+						.forward(request, response);
+			} else {
+				achat.setClient(client);
+				achat.setDateAchat(new Date());
+				achat.setQuantiteAchat(totalQte);
+				achat.setTotalAchat(prixTotal);
+				achatRepository.save(achat);
+				List<Commande> commandes = commandeRepository
+						.findByAchat(achat);
+				for (Commande commande : commandes) {
+					commandeRepository.delete(commande);
+				}
+				request.setAttribute("message", message);
+				request.getRequestDispatcher("/WEB-INF/views/displayShop.jsp")
+						.forward(request, response);
+			}
 		}
 
 	}

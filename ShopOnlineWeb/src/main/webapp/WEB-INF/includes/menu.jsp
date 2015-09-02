@@ -7,8 +7,6 @@
 <body>
 	<ul class="nav nav-pills nav-stacked">
 		<li role="presentation"><a
-			href="${pageContext.request.contextPath}/clientServletRegister.do">S'inscrire</a></li>
-		<li role="presentation"><a
 			href="${pageContext.request.contextPath}/articleServletRegister.do">Ajout
 				Article</a></li>
 		<li role="presentation"><a

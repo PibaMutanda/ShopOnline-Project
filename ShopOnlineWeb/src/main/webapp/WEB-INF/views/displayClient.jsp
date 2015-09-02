@@ -64,11 +64,11 @@ ${erreur } <br>
 			action="${pageContext.request.contextPath}/updateClient.do">
 			<div class="form-group">
 				<input type="text" class="form-control" name="nom"
-					value="${clientModif.nom }">
+					value="${clientModif.nom }" readonly="readonly" >
 			</div>
 			<div class="form-group">
 				<input type="text" class="form-control" name="prenom"
-					value="${clientModif.prenom }">
+					value="${clientModif.prenom }" readonly="readonly">
 			</div>
 			<div class="form-group">
 				<input type="text" class="form-control" name="email"
@@ -87,7 +87,7 @@ ${erreur } <br>
 					value="${clientModif.localite }">
 			</div>
 			<div>
-			Bloquer
+			Bloquer ?
 			</div>
 			<label class="radio-inline"> <input type="radio"
 				name="indesiderable" id="inlineRadio3" value="true"> Oui

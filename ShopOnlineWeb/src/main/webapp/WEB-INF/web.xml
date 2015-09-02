@@ -148,6 +148,20 @@
     	<servlet-name>CommandeEnAttenteServlet</servlet-name>
     	<servlet-class>be.shop.servlet.CommandeEnAttenteServlet</servlet-class>
     </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>DeleteCommandeClientServlet</display-name>
+    	<servlet-name>DeleteCommandeClientServlet</servlet-name>
+    	<servlet-class>be.shop.servlet.DeleteCommandeClientServlet</servlet-class>
+    </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>MesAchatsServlet</display-name>
+    	<servlet-name>MesAchatsServlet</servlet-name>
+    	<servlet-class>be.shop.servlet.MesAchatsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
     	<servlet-name>ClientServlet</servlet-name>
     	<url-pattern>/clientServletRegister.do</url-pattern>
@@ -231,6 +245,14 @@
     <servlet-mapping>
     	<servlet-name>CommandeEnAttenteServlet</servlet-name>
     	<url-pattern>/commandeEnAttente.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>DeleteCommandeClientServlet</servlet-name>
+    	<url-pattern>/deleteCommandeClient.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>MesAchatsServlet</servlet-name>
+    	<url-pattern>/mesAchats.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

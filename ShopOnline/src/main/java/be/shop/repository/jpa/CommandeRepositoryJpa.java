@@ -40,4 +40,20 @@ public class CommandeRepositoryJpa extends GenericRepositoryJpa<Commande>
 				.setParameter("dateCommande", dateCommande).getResultList();
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Commande> findAllWithoutPurchase() {
+		return getEntityManager().createNamedQuery(
+				"Commande.findAllWithoutPurchase").getResultList();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Commande> findTenPurchaseOfClient(Client client) {
+		return getEntityManager()
+				.createNamedQuery("Commande.findTenPurchaseOfClient")
+				.setMaxResults(10)
+				.setParameter("client", client).getResultList();
+	}
+
 }

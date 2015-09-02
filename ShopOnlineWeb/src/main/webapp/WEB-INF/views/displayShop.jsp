@@ -51,7 +51,7 @@
 				</c:forEach>
 				<c:if test="${not empty sessionIdClient }">
 					<tr>
-						<td><button type="submit" class="btn btn-primary">Acheter</button></td>
+						<td><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span></button></td>
 					</tr>
 				</c:if>
 			</table>

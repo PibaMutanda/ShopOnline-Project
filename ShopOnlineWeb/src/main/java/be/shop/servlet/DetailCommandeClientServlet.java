@@ -43,7 +43,7 @@ public class DetailCommandeClientServlet extends HttpServlet {
 		Achat achat = achatRepository.findById(Long.parseLong(idStr));
 		List<Commande> commandesClient = commandeServices.findByAchat(achat);
 		request.setAttribute("commandes", commandesClient);
-		request.getRequestDispatcher("/WEB-INF/views/achatsClient.jsp")
+		request.getRequestDispatcher("/WEB-INF/views/detailCommandeClient.jsp")
 				.forward(request, response);
 	}
 

@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,7 +24,9 @@ import javax.persistence.TemporalType;
 		@NamedQuery(name = "Commande.findByClientAndDate", query = "select c from Commande c where c.dateCommande=:dateCommande and c.client=:client"),
 		@NamedQuery(name = "Commande.findAll", query = "select c from Commande c"),
 		@NamedQuery(name = "Commande.findByArticle", query = "select c from Commande c join c.articles a where a.id=:id"),
-		@NamedQuery(name = "Commande.findByAchat", query = "select c from Commande c where c.achat=:achat") })
+		@NamedQuery(name = "Commande.findByAchat", query = "select c from Commande c where c.achat=:achat"),
+		@NamedQuery(name="Commande.findAllWithoutPurchase", query="select c from Commande c where c.achat is null"),
+		@NamedQuery(name="Commande.findTenPurchaseOfClient", query="select c from Commande c where c.client=:client")})
 public class Commande {
 
 	@Id
@@ -34,7 +37,7 @@ public class Commande {
 	@JoinColumn
 	private Achat achat;
 
-	@OneToMany(mappedBy = "commande")
+	@OneToMany(mappedBy = "commande", fetch=FetchType.EAGER)
 	private List<Article> articles = new ArrayList<Article>();
 
 	private int quantite;

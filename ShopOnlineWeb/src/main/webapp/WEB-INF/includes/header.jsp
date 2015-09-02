@@ -24,12 +24,26 @@
 						<c:when test="${empty sessionIdClient }">
 							<li><a href="${pageContext.request.contextPath}/login.do"
 								class="glyphicon glyphicon-log-in"></a></li>
+							<li role="presentation"><a
+								href="${pageContext.request.contextPath}/clientServletRegister.do">S'inscrire</a></li>
 						</c:when>
 						<c:otherwise>
 							<li><img src="${client.image }" alt="" class="img-circle"></li>
 							<li>${client.prenom }</li>
-							<li><a href="${pageContext.request.contextPath}/logout.do"
-								class="glyphicon glyphicon-log-out"></a></li>
+							<li class="dropdown"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown" role="button" aria-haspopup="true"
+								aria-expanded="false"><span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="${pageContext.request.contextPath}/logout.do"
+										class="glyphicon glyphicon-log-out">
+											D&eacute;connexion</a></li>
+									<li><a class="glyphicon glyphicon-eye-open"
+										href="${pageContext.request.contextPath}/mesAchats.do?id=${sessionIdClient}">
+											Mes achats</a></li>
+									<li><a href="#">Something else here</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">Separated link</a></li>
+								</ul>
 						</c:otherwise>
 					</c:choose>
 				</ul>

@@ -22,91 +22,102 @@ import be.shop.repository.CommandeRepository;
  */
 public class CommandeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	@EJB
 	private CommandeRepository commandeRepository;
-	
-	
-	
+
 	@EJB
 	private ArticleRepository articleRepository;
-	
+
 	@EJB
 	private ClientRepository clientRepository;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public CommandeServlet() {
-        super();
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public CommandeServlet() {
+		super();
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		List<String> messageErrors = new ArrayList<String>();
 		List<Article> articles = new ArrayList<Article>();
 		Long sessionIdClient = null;
 		Client client = null;
-		int cpt=0;
+		int cpt = 0;
 		String quantiteStrTab[] = request.getParameterValues("quantite");
-		String idTab[]= request.getParameterValues("id");
-		
-		
+		String idTab[] = request.getParameterValues("id");
 		// On recupère la session du client
-				sessionIdClient = (Long) request.getSession().getAttribute("sessionIdClient");
-				if(sessionIdClient==null)
-					messageErrors.add("Inscrivez-vous sur le site avant de pouvoir effectuer les achats");
-				else
-					client = clientRepository.findById(sessionIdClient);
-				if(client==null)
-					messageErrors.add("Achat non autorisé!! Veuillez contacter nos service");
-				if(idTab == null || quantiteStrTab == null)
-					messageErrors.add("Votre shop est en r&eacute;approvisionnement");
-				else	{	
-		for (String idStr : idTab) {
-			Article article = articleRepository.findById(Long.parseLong(idStr));
-			int quantite = Integer.parseInt(quantiteStrTab[cpt]);
-		
-			/*
-			 * Vérification si la quantité d'achat est disposible*/
-			if(quantite > article.getQteTotale())
-				messageErrors.add("La quantit&eacute; en stock est insuffisant pour "+article.getDenomination());
-			// on actualise la quantité restante en stock dans le magasin
-			else{	
-				 Commande commande = new Commande();
-				 article.setQteTotale(article.getQteTotale()-quantite);
-		    	 Double totalArticle = quantite * article.getPrix();
-		         commande.addArticle(article);
-		         commande.setQuantite(quantite);
-		         commande.setTotalCommande(totalArticle);
-		         commande.setClient(client);
-		         commande.setDateCommande(new Date());
-		         articleRepository.save(article);
-		         commandeRepository.save(commande);
-		    	 articles.add(article);
-		    	cpt++;
+		sessionIdClient = (Long) request.getSession().getAttribute(
+				"sessionIdClient");
+		if (sessionIdClient == null)
+			messageErrors
+					.add("Inscrivez-vous sur le site avant de pouvoir effectuer les achats");
+		else
+			client = clientRepository.findById(sessionIdClient);
+		if (client == null)
+			messageErrors
+					.add("Achat non autorisé!! Veuillez contacter nos service");
+		if (idTab == null || quantiteStrTab == null)
+			messageErrors.add("Votre shop est en r&eacute;approvisionnement");
+		else {
+			for (String idStr : idTab) {
+				Article article = articleRepository.findById(Long
+						.parseLong(idStr));
+				int quantite = Integer.parseInt(quantiteStrTab[cpt]);
+
+				/*
+				 * Vérification si la quantité d'achat est disposible
+				 */
+				if (quantite > article.getQteTotale())
+					messageErrors
+							.add("La quantit&eacute; en stock est insuffisant pour "
+									+ article.getDenomination());
+				// on actualise la quantité restante en stock dans le magasin
+				else {
+					Commande commande = new Commande();
+					article.setQteTotale(article.getQteTotale() - quantite);
+					Double totalArticle = quantite * article.getPrix();
+					commande.addArticle(article);
+					commande.setQuantite(quantite);
+					commande.setTotalCommande(totalArticle);
+					commande.setClient(client);
+					commande.setDateCommande(new Date());
+					if (quantite > 0) {
+						articleRepository.save(article);
+						commandeRepository.save(commande);
+						articles.add(article);
+					}
+					cpt++;
+				}
 			}
 		}
-				}
-		
-		if(messageErrors.size()>0){
+
+		if (messageErrors.size() > 0) {
 			request.setAttribute("messageErrors", messageErrors);
-			request.getRequestDispatcher("/WEB-INF/views/displayShop.jsp").forward(request, response);
-		}
-		else{
-			  request.setAttribute("articles", articles);
-			  request.setAttribute("commandes", commandeRepository.findByClientAndDate(client, new Date()));
-		  request.getRequestDispatcher("WEB-INF/views/confirmAchat.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/displayShop.jsp")
+					.forward(request, response);
+		} else {
+			request.setAttribute("articles", articles);
+			request.setAttribute("commandes",
+					commandeRepository.findByClientAndDate(client, new Date()));
+			request.getRequestDispatcher("/WEB-INF/views/confirmAchat.jsp")
+					.forward(request, response);
 		}
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	doGet(request,  response);
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
 	}
 
 }

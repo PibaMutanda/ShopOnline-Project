@@ -34,8 +34,8 @@
 				</c:forEach>
 			</c:forEach>
 			<tr>
-				<td><button type="submit" class="btn btn-primary">Acheter</button></td>
-				<td><a>Annuler</a></td>
+				<td><button type="submit" class="btn btn-primary">Acheter <span class="glyphicon glyphicon-euro"></span></button></td>
+				<td><a href="${pageContext.request.contextPath}/home.do">Annuler</a></td>
 			</tr>
 		</table>
 	</form>

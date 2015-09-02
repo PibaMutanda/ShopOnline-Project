@@ -17,4 +17,8 @@ public interface CommandeRepository extends GenericRepository<Commande> {
 	List<Commande> findByArticle(Long article);
 	
 	List<Commande> findByClientAndDate(Client client, Date dateCommande);
+	
+	List<Commande> findAllWithoutPurchase();
+	
+	List<Commande> findTenPurchaseOfClient(Client client);
 }
